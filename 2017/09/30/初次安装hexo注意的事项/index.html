@@ -71,18 +71,18 @@
 
 
 
-<meta name="description" content="前期需要安装的组件 nodejs   下载nodejs windows:windows linux（ubuntu为例）        12345$ sudo add-apt-repository ppa:chris-lea/node.js$ sudo apt-get update$ sudo apt-get install nodejs```  - 或者采用`nvm`安装： $ wget -qO-">
+<meta name="description" content="前期需要安装的组件 nodejs   下载nodejs windows:windows linux（ubuntu为例）">
 <meta name="keywords" content="建站">
 <meta property="og:type" content="article">
 <meta property="og:title" content="初次安装hexo注意的事项">
 <meta property="og:url" content="https://liwg1995.github.io/2017/09/30/初次安装hexo注意的事项/index.html">
 <meta property="og:site_name" content="禹都一只猫">
-<meta property="og:description" content="前期需要安装的组件 nodejs   下载nodejs windows:windows linux（ubuntu为例）        12345$ sudo add-apt-repository ppa:chris-lea/node.js$ sudo apt-get update$ sudo apt-get install nodejs```  - 或者采用`nvm`安装： $ wget -qO-">
+<meta property="og:description" content="前期需要安装的组件 nodejs   下载nodejs windows:windows linux（ubuntu为例）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-30T14:23:09.739Z">
+<meta property="og:updated_time" content="2017-09-30T14:26:13.896Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初次安装hexo注意的事项">
-<meta name="twitter:description" content="前期需要安装的组件 nodejs   下载nodejs windows:windows linux（ubuntu为例）        12345$ sudo add-apt-repository ppa:chris-lea/node.js$ sudo apt-get update$ sudo apt-get install nodejs```  - 或者采用`nvm`安装： $ wget -qO-">
+<meta name="twitter:description" content="前期需要安装的组件 nodejs   下载nodejs windows:windows linux（ubuntu为例）">
 
 
 
@@ -348,12 +348,13 @@
 <li>nodejs  <ul>
 <li>下载<a href="https://nodejs.org" target="_blank" rel="external">nodejs</a><ul>
 <li>windows:<a href="https://nodejs.org/dist/v6.11.3/node-v6.11.3-x64.msi" target="_blank" rel="external">windows</a></li>
-<li>linux（<code>ubuntu</code>为例）  </li>
+<li>linux（<code>ubuntu</code>为例）</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
+<a id="more"></a>  
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ sudo add-apt-repository ppa:chris-lea/node.js</div><div class="line">$ sudo apt-get update</div><div class="line">$ sudo apt-get install nodejs</div><div class="line">```  </div><div class="line">- 或者采用`nvm`安装：</div></pre></td></tr></table></figure>
 <p>$ wget -qO- <a href="https://raw.github.com/creationix/nvm/master/install.sh" target="_blank" rel="external">https://raw.github.com/creationix/nvm/master/install.sh</a> | sh<br>$ nvm install 4<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&gt; 主要是要用到npm</div><div class="line">  &gt; 国内的话，npm install会超级慢，天朝墙很高，你有能耐就翻过去咯~</div><div class="line">- git</div><div class="line">&gt; 既然是要跟github打交道，那么git组件是必不可少的了</div><div class="line"></div><div class="line">### 翻墙问题</div><div class="line">#### 我要是没有那个能耐怎么办呢？</div><div class="line">- 国内有很好的镜像源，比如清华源:[清华源](https://mirrors.tuna.tsinghua.edu.cn/)等等</div><div class="line">#### 我们用淘宝源，来安装一个国内比较快的命令`cnpm`来代替`npm`</div></pre></td></tr></table></figure></p>
 <p>$ npm install -g cnpm –registry=<a href="http://registry.npm.taobao.org" target="_blank" rel="external">http://registry.npm.taobao.org</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt; 因为我们安装好npm之后，之后要安装很多npm的组件，都要用到`npm install`，会超级慢，所以我们用`cnpm`来代替`npm`</div><div class="line"></div><div class="line">### 选择镜像</div><div class="line">#### 我们安装好`hexo`的时候，要运行`hexo`的一些命令，会发现特喵还是这么慢，怎么破？</div><div class="line">- 我们安装`nrm`来选择镜像</div></pre></td></tr></table></figure></p>
