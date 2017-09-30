@@ -79,7 +79,7 @@
 <meta property="og:site_name" content="禹都一只猫">
 <meta property="og:description" content="前期需要安装的组件 nodejs   下载nodejs windows:windows linux（ubuntu为例）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-30T14:40:08.180Z">
+<meta property="og:updated_time" content="2017-09-30T14:43:56.323Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初次安装hexo注意的事项">
 <meta name="twitter:description" content="前期需要安装的组件 nodejs   下载nodejs windows:windows linux（ubuntu为例）">
@@ -357,14 +357,31 @@
 <a id="more"></a>  
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ sudo add-apt-repository ppa:chris-lea/node.js</div><div class="line">$ sudo apt-get update</div><div class="line">$ sudo apt-get install nodejs</div></pre></td></tr></table></figure>
 <ul>
-<li>或者采用<code>nvm</code>安装：  </li>
+<li>或者采用<code>nvm</code>安装：<br><code>$ wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh</code><br><code>$ nvm install 4</code>  </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">$ wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh</div><div class="line">$ nvm install 4</div><div class="line">```  </div><div class="line">  </div><div class="line"></div><div class="line">&gt; 主要是要用到npm</div><div class="line">  &gt; 国内的话，npm install会超级慢，天朝墙很高，你有能耐就翻过去咯~</div><div class="line">- git</div><div class="line">&gt; 既然是要跟github打交道，那么git组件是必不可少的了</div><div class="line"></div><div class="line">### 翻墙问题</div><div class="line">#### 我要是没有那个能耐怎么办呢？  </div><div class="line">- 国内有很好的镜像源，比如清华源:[清华源](https://mirrors.tuna.tsinghua.edu.cn/)等等  </div><div class="line">#### 我们用淘宝源，来安装一个国内比较快的命令`cnpm`来代替`npm`</div></pre></td></tr></table></figure>
-<p>$ npm install -g cnpm –registry=<a href="http://registry.npm.taobao.org" target="_blank" rel="external">http://registry.npm.taobao.org</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">  </div><div class="line"></div><div class="line">&gt; 因为我们安装好npm之后，之后要安装很多npm的组件，都要用到`npm install`，会超级慢，所以我们用`cnpm`来代替`npm`</div><div class="line"></div><div class="line">### 选择镜像</div><div class="line">#### 我们安装好`hexo`的时候，要运行`hexo`的一些命令，会发现特喵还是这么慢，怎么破？</div><div class="line">- 我们安装`nrm`来选择镜像</div></pre></td></tr></table></figure></p>
-<p>$ cnpm install -g nrm –save<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">  </div><div class="line"></div><div class="line">- 选择镜像</div></pre></td></tr></table></figure></p>
-<p>$ nrm use taobao<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">  </div><div class="line"></div><div class="line">&gt; 这样我们就选择好了国内镜像  </div><div class="line"></div><div class="line">### 咋个安装`hexo`啊？</div><div class="line">- `cnpm`安装好了，我们就用</div></pre></td></tr></table></figure></p>
-<p>$ cnpm install -g hexo-cli<br>$ cnpm install -g hexo<br>```  </p>
-<h3 id="github上注意的东西"><a href="#github上注意的东西" class="headerlink" title="github上注意的东西"></a><code>github</code>上注意的东西</h3><ol>
+<blockquote>
+<p>主要是要用到npm<br>国内的话，npm install会超级慢，天朝墙很高，你有能耐就翻过去咯~</p>
+<ul>
+<li>git<br>既然是要跟github打交道，那么git组件是必不可少的了</li>
+</ul>
+</blockquote>
+<h3 id="翻墙问题"><a href="#翻墙问题" class="headerlink" title="翻墙问题"></a>翻墙问题</h3><h4 id="我要是没有那个能耐怎么办呢？"><a href="#我要是没有那个能耐怎么办呢？" class="headerlink" title="我要是没有那个能耐怎么办呢？"></a>我要是没有那个能耐怎么办呢？</h4><ul>
+<li>国内有很好的镜像源，比如清华源:<a href="https://mirrors.tuna.tsinghua.edu.cn/" target="_blank" rel="external">清华源</a>等等  <h4 id="我们用淘宝源，来安装一个国内比较快的命令cnpm来代替npm"><a href="#我们用淘宝源，来安装一个国内比较快的命令cnpm来代替npm" class="headerlink" title="我们用淘宝源，来安装一个国内比较快的命令cnpm来代替npm"></a>我们用淘宝源，来安装一个国内比较快的命令<code>cnpm</code>来代替<code>npm</code></h4><code>$ npm install -g cnpm --registry=http://registry.npm.taobao.org</code>  <blockquote>
+<p>因为我们安装好npm之后，之后要安装很多npm的组件，都要用到<code>npm install</code>，会超级慢，所以我们用<code>cnpm</code>来代替<code>npm</code></p>
+</blockquote>
+</li>
+</ul>
+<h3 id="选择镜像"><a href="#选择镜像" class="headerlink" title="选择镜像"></a>选择镜像</h3><h4 id="我们安装好hexo的时候，要运行hexo的一些命令，会发现特喵还是这么慢，怎么破？"><a href="#我们安装好hexo的时候，要运行hexo的一些命令，会发现特喵还是这么慢，怎么破？" class="headerlink" title="我们安装好hexo的时候，要运行hexo的一些命令，会发现特喵还是这么慢，怎么破？"></a>我们安装好<code>hexo</code>的时候，要运行<code>hexo</code>的一些命令，会发现特喵还是这么慢，怎么破？</h4><ul>
+<li>我们安装<code>nrm</code>来选择镜像<br><code>$ cnpm install -g nrm --save</code>  </li>
+<li>选择镜像<br><code>$ nrm use taobao</code>  <blockquote>
+<p>这样我们就选择好了国内镜像  </p>
+</blockquote>
+</li>
+</ul>
+<h3 id="咋个安装hexo啊？"><a href="#咋个安装hexo啊？" class="headerlink" title="咋个安装hexo啊？"></a>咋个安装<code>hexo</code>啊？</h3><ul>
+<li><code>cnpm</code>安装好了，我们就用<br><code>$ cnpm install -g hexo-cli</code><br><code>$ cnpm install -g hexo</code><h3 id="github上注意的东西"><a href="#github上注意的东西" class="headerlink" title="github上注意的东西"></a><code>github</code>上注意的东西</h3></li>
+</ul>
+<ol>
 <li><code>github</code>的<code>repo</code>的名称必须是<code>用户名.github.io</code><ul>
 <li>比如：我的<code>github</code>用户名为<code>keykeyorange</code>,那么我的用户名就为：  </li>
 <li><code>keykeyorange.github.io</code></li>
@@ -606,7 +623,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前期需要安装的组件"><span class="nav-number">1.</span> <span class="nav-text">前期需要安装的组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#github上注意的东西"><span class="nav-number">2.</span> <span class="nav-text">github上注意的东西</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意两个命令"><span class="nav-number">3.</span> <span class="nav-text">注意两个命令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前期需要安装的组件"><span class="nav-number">1.</span> <span class="nav-text">前期需要安装的组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#翻墙问题"><span class="nav-number">2.</span> <span class="nav-text">翻墙问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#我要是没有那个能耐怎么办呢？"><span class="nav-number">2.1.</span> <span class="nav-text">我要是没有那个能耐怎么办呢？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我们用淘宝源，来安装一个国内比较快的命令cnpm来代替npm"><span class="nav-number">2.2.</span> <span class="nav-text">我们用淘宝源，来安装一个国内比较快的命令cnpm来代替npm</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择镜像"><span class="nav-number">3.</span> <span class="nav-text">选择镜像</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#我们安装好hexo的时候，要运行hexo的一些命令，会发现特喵还是这么慢，怎么破？"><span class="nav-number">3.1.</span> <span class="nav-text">我们安装好hexo的时候，要运行hexo的一些命令，会发现特喵还是这么慢，怎么破？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#咋个安装hexo啊？"><span class="nav-number">4.</span> <span class="nav-text">咋个安装hexo啊？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#github上注意的东西"><span class="nav-number">5.</span> <span class="nav-text">github上注意的东西</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意两个命令"><span class="nav-number">6.</span> <span class="nav-text">注意两个命令</span></a></li></ol></div>
             
 
           </div>
