@@ -324,8 +324,7 @@
 
       
         
-          
-            <h3 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a><code>安装Docker</code></h3><ul>
+          <h3 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a><code>安装Docker</code></h3><ul>
 <li>脚本</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ wget -qO- https://get.docker.com/ | sh</div></pre></td></tr></table></figure>
@@ -333,40 +332,13 @@
 <li>源</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -</div><div class="line"></div><div class="line">$ sudo add-apt-repository \</div><div class="line">    &quot;deb [arch=amd64] https://mirrors.aliyun.com/docker-ce/linux/ubuntu \</div><div class="line">    $(lsb_release -cs) \</div><div class="line">    stable&quot;</div></pre></td></tr></table></figure>
-<h3 id="安装docker-compose"><a href="#安装docker-compose" class="headerlink" title="安装docker-compose"></a>安装<code>docker-compose</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pip install -U docker-compose</div></pre></td></tr></table></figure>
-<blockquote>
-<p>如果提示没有pip，则需要安装pip<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ apt-get install python-pip</div></pre></td></tr></table></figure></p>
-</blockquote>
-<h3 id="获取sentry"><a href="#获取sentry" class="headerlink" title="获取sentry"></a>获取<code>sentry</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/getsentry/onpremise.git</div></pre></td></tr></table></figure>
-<blockquote>
-<p>cd到onpremise目录下  </p>
-</blockquote>
-<p>1.构建容器并创建数据库和sentry安装目录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mkdir  -p data/&#123;sentry,postgres&#125;</div></pre></td></tr></table></figure>
-<p>2.配置国内源</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cd /etc/docker</div><div class="line">$ touch daemon.json</div></pre></td></tr></table></figure>
-<blockquote>
-<p>在<code>daemon.json</code>里面写入：</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;registry-mirrors&quot;: [&quot;https://docker.mirrors.ustc.edu.cn/&quot;]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ service docker restart</div></pre></td></tr></table></figure>
-<p>3.生成secret key并添加到docker-compose文件里</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ docker-compose run --rm web config generate-secret-key</div></pre></td></tr></table></figure>
-<p>4.重建数据库，并创建sentry超级管理员用户</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ docker-compose run --rm web upgrade</div></pre></td></tr></table></figure>
-<p>5.启动所有的服务</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ docker-compose up -d</div></pre></td></tr></table></figure>
-<h3 id="访问"><a href="#访问" class="headerlink" title="访问"></a>访问</h3><ul>
-<li>访问<code>http://ip:9000</code><ul>
-<li>ip为你本地或者服务器的ip<blockquote>
-<p>以上是ubuntu 16.04下进行</p>
-</blockquote>
-</li>
-</ul>
-</li>
-</ul>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/09/docker下安装sentry/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
