@@ -71,18 +71,18 @@
 
 
 
-<meta name="description" content="镜像 下载镜像  1$ docker pull  镜像名  删除镜像  1$ docker rmi xxx  xxx为仓库源或者镜像ID若无法删除，则删除其依赖   1docker rm `docker ps -aq`   导入导出镜像     导出镜像 1$ docker save -o xxx.tar xxx  导入本地镜像   1$ docker load --input xxx.tar">
+<meta name="description" content="镜像 下载镜像  1$ docker pull  镜像名">
 <meta name="keywords" content="docker">
 <meta property="og:type" content="article">
 <meta property="og:title" content="docker基础命令浅谈">
 <meta property="og:url" content="https://liwg1995.github.io/2017/10/13/docker基础命令浅谈/index.html">
 <meta property="og:site_name" content="禹都一只猫">
-<meta property="og:description" content="镜像 下载镜像  1$ docker pull  镜像名  删除镜像  1$ docker rmi xxx  xxx为仓库源或者镜像ID若无法删除，则删除其依赖   1docker rm `docker ps -aq`   导入导出镜像     导出镜像 1$ docker save -o xxx.tar xxx  导入本地镜像   1$ docker load --input xxx.tar">
+<meta property="og:description" content="镜像 下载镜像  1$ docker pull  镜像名">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-13T15:28:18.535Z">
+<meta property="og:updated_time" content="2017-10-13T15:31:13.300Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker基础命令浅谈">
-<meta name="twitter:description" content="镜像 下载镜像  1$ docker pull  镜像名  删除镜像  1$ docker rmi xxx  xxx为仓库源或者镜像ID若无法删除，则删除其依赖   1docker rm `docker ps -aq`   导入导出镜像     导出镜像 1$ docker save -o xxx.tar xxx  导入本地镜像   1$ docker load --input xxx.tar">
+<meta name="twitter:description" content="镜像 下载镜像  1$ docker pull  镜像名">
 
 
 
@@ -359,6 +359,7 @@
 <li>下载镜像</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ docker pull  镜像名</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <ul>
 <li>删除镜像</li>
 </ul>
@@ -383,7 +384,7 @@
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ docker save xxx | bzip2 | ssh ....@.... &quot;cat  |  docker load &quot;</div></pre></td></tr></table></figure>
 <blockquote>
-<p>xxx为镜像名</p>
+<p>xxx为镜像名  </p>
 <h3 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h3><ul>
 <li>以shell运行容器</li>
 </ul>
