@@ -1938,7 +1938,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #1ba79f;
+  background: #a4c4af;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3020,4 +3020,7 @@ hr {
     width: auto;
     text-align: center;
   }
+}
+body {
+  background: url("https://images.lwg1995.cn/lz.jpg");
 }
