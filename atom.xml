@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liwg1995.github.io/"/>
-  <updated>2017-10-19T11:40:46.354Z</updated>
+  <updated>2017-10-20T09:41:02.121Z</updated>
   <id>https://liwg1995.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>gitlab的安装，更新，备份恢复</title>
+    <link href="https://liwg1995.github.io/2017/10/20/gitlab%E7%9A%84%E5%AE%89%E8%A3%85%EF%BC%8C%E6%9B%B4%E6%96%B0%EF%BC%8C%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D/"/>
+    <id>https://liwg1995.github.io/2017/10/20/gitlab的安装，更新，备份恢复/</id>
+    <published>2017-10-20T09:39:11.000Z</published>
+    <updated>2017-10-20T09:41:02.121Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul><li>配置国内镜像源<blockquote><p>由于国内镜像，博主我只找到清华大学的镜像中有<code>gitlab-ce</code>，所以我们就配置好清华大学的镜像 </p></blockquote></li></ul><ol><li>添加GitLab 的 GPG 公钥:</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ curl https://packages.gitlab.com/gpg.key 2&gt; /dev/null | sudo apt-key add - &amp;&gt;/dev/null</div></pre></td></tr></table></figure><a id="more"></a><ol><li>在<code>/etc/apt/sources.list.d/gitlab-ce.list</code>写入：  </li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">deb https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/ubuntu xenial main</div></pre></td></tr></table></figure><ol><li>安装</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get update</div><div class="line">$ sudo apt-get install gitlab-ce</div></pre></td></tr></table></figure><ol><li>配置</li></ol><ul><li>修改<code>/etc/gitlab/</code>目录中的<code>gitlab.rb</code>文件，配置域名，配置邮箱等等</li><li>重新配置命令:</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo gitlab-ctl reconfigure</div></pre></td></tr></table></figure><ol><li>运行</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo gitlab-ctl restart</div></pre></td></tr></table></figure><h3 id="备份恢复"><a href="#备份恢复" class="headerlink" title="备份恢复"></a>备份恢复</h3><ol><li>备份</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo gitlab-rake gitlab:backup:create</div></pre></td></tr></table></figure><blockquote><p>在<code>/var/opt/gitlab/backups</code>目录下会有类似如下格式的备份文件:<br><code>1466811825_gitlab_backup.tar</code></p><ol><li>恢复</li></ol><ul><li>恢复<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># 停止相关数据连接服务</div><div class="line">$ sudo gitlab-ctl stop unicorn </div><div class="line">$ sudo gitlab-ctl stop sidekiq</div><div class="line"></div><div class="line">$ sudo gitlab-rake gitlab:backup:restore BACKUP=xxxx   # xxx为备份文件_gitlab_backup.tar前面的数字</div></pre></td></tr></table></figure></li></ul></blockquote><ul><li>启动</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo gitlab-ctl start</div></pre></td></tr></table></figure><h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get update</div><div class="line">$ sudo apt-get install gitlab-ce</div><div class="line">$ sudo apt-get reconfigure</div></pre></td></tr></table></figure><hr>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;配置国内镜像源&lt;blockquote&gt;
+&lt;p&gt;由于国内镜像，博主我只找到清华大学的镜像中有&lt;code&gt;gitlab-ce&lt;/code&gt;，所以我们就配置好清华大学的镜像 &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;添加GitLab 的 GPG 公钥:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ curl https://packages.gitlab.com/gpg.key 2&amp;gt; /dev/null | sudo apt-key add - &amp;amp;&amp;gt;/dev/null&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://liwg1995.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="gitlab" scheme="https://liwg1995.github.io/tags/gitlab/"/>
+    
+  </entry>
   
   <entry>
     <title>php+nginx+http/https的Basic Authentication认证</title>

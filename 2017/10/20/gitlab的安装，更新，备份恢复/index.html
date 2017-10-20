@@ -53,12 +53,10 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="gitlab," />
 
 
 
-
-  
 
 
   <link rel="alternate" href="/atom.xml" title="禹都一只猫" type="application/atom+xml" />
@@ -73,17 +71,18 @@
 
 
 
-<meta name="description" content="关于站长 山西运城 大学本科，数学专业：信息与计算科学 一个初出茅庐的毕业生，现在从事运维开发 喜欢IT技术 最喜欢python，没有之一  关于站点 托管于github 基于hexo 创建于2017.09.29   欢迎访问～">
-<meta property="og:type" content="website">
-<meta property="og:title" content="关于">
-<meta property="og:url" content="https://liwg1995.github.io/about/index.html">
+<meta name="description" content="安装 配置国内镜像源 由于国内镜像，博主我只找到清华大学的镜像中有gitlab-ce，所以我们就配置好清华大学的镜像      添加GitLab 的 GPG 公钥:  1$ curl https://packages.gitlab.com/gpg.key 2&amp;gt; /dev/null | sudo apt-key add - &amp;amp;&amp;gt;/dev/null">
+<meta name="keywords" content="gitlab">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gitlab的安装，更新，备份恢复">
+<meta property="og:url" content="https://liwg1995.github.io/2017/10/20/gitlab的安装，更新，备份恢复/index.html">
 <meta property="og:site_name" content="禹都一只猫">
-<meta property="og:description" content="关于站长 山西运城 大学本科，数学专业：信息与计算科学 一个初出茅庐的毕业生，现在从事运维开发 喜欢IT技术 最喜欢python，没有之一  关于站点 托管于github 基于hexo 创建于2017.09.29   欢迎访问～">
+<meta property="og:description" content="安装 配置国内镜像源 由于国内镜像，博主我只找到清华大学的镜像中有gitlab-ce，所以我们就配置好清华大学的镜像      添加GitLab 的 GPG 公钥:  1$ curl https://packages.gitlab.com/gpg.key 2&amp;gt; /dev/null | sudo apt-key add - &amp;amp;&amp;gt;/dev/null">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-30T03:54:23.164Z">
+<meta property="og:updated_time" content="2017-10-20T09:41:02.121Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于">
-<meta name="twitter:description" content="关于站长 山西运城 大学本科，数学专业：信息与计算科学 一个初出茅庐的毕业生，现在从事运维开发 喜欢IT技术 最喜欢python，没有之一  关于站点 托管于github 基于hexo 创建于2017.09.29   欢迎访问～">
+<meta name="twitter:title" content="gitlab的安装，更新，备份恢复">
+<meta name="twitter:description" content="安装 配置国内镜像源 由于国内镜像，博主我只找到清华大学的镜像中有gitlab-ce，所以我们就配置好清华大学的镜像      添加GitLab 的 GPG 公钥:  1$ curl https://packages.gitlab.com/gpg.key 2&amp;gt; /dev/null | sudo apt-key add - &amp;amp;&amp;gt;/dev/null">
 
 
 
@@ -113,13 +112,13 @@
 
 
 
-  <link rel="canonical" href="https://liwg1995.github.io/about/"/>
+  <link rel="canonical" href="https://liwg1995.github.io/2017/10/20/gitlab的安装，更新，备份恢复/"/>
 
 
 
 
 
-  <title>关于 | 禹都一只猫</title>
+  <title>gitlab的安装，更新，备份恢复 | 禹都一只猫</title>
   
 
 
@@ -244,48 +243,256 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liwg1995.github.io/2017/10/20/gitlab的安装，更新，备份恢复/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="olei.me">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://secure.gravatar.com/avatar/8e3ecfd364a177a21e7759d39861c630?s=320&d=identicon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="禹都一只猫">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">关于</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <h3 id="关于站长"><a href="#关于站长" class="headerlink" title="关于站长"></a>关于站长</h3><ul>
-<li>山西运城</li>
-<li>大学本科，数学专业：信息与计算科学</li>
-<li>一个初出茅庐的毕业生，现在从事运维开发</li>
-<li>喜欢IT技术</li>
-<li>最喜欢python，没有之一</li>
-</ul>
-<h3 id="关于站点"><a href="#关于站点" class="headerlink" title="关于站点"></a>关于站点</h3><ul>
-<li>托管于github</li>
-<li>基于hexo</li>
-<li>创建于2017.09.29</li>
-</ul>
-<blockquote>
-<p>欢迎访问～</p>
+          <h1 class="post-title" itemprop="name headline">gitlab的安装，更新，备份恢复</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-20T17:39:11+08:00">
+                2017-10-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/20/gitlab的安装，更新，备份恢复/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/10/20/gitlab的安装，更新，备份恢复/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul>
+<li>配置国内镜像源<blockquote>
+<p>由于国内镜像，博主我只找到清华大学的镜像中有<code>gitlab-ce</code>，所以我们就配置好清华大学的镜像 </p>
 </blockquote>
+</li>
+</ul>
+<ol>
+<li>添加GitLab 的 GPG 公钥:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ curl https://packages.gitlab.com/gpg.key 2&gt; /dev/null | sudo apt-key add - &amp;&gt;/dev/null</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<ol>
+<li>在<code>/etc/apt/sources.list.d/gitlab-ce.list</code>写入：  </li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">deb https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/ubuntu xenial main</div></pre></td></tr></table></figure>
+<ol>
+<li>安装</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get update</div><div class="line">$ sudo apt-get install gitlab-ce</div></pre></td></tr></table></figure>
+<ol>
+<li>配置</li>
+</ol>
+<ul>
+<li>修改<code>/etc/gitlab/</code>目录中的<code>gitlab.rb</code>文件，配置域名，配置邮箱等等</li>
+<li>重新配置命令:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo gitlab-ctl reconfigure</div></pre></td></tr></table></figure>
+<ol>
+<li>运行</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo gitlab-ctl restart</div></pre></td></tr></table></figure>
+<h3 id="备份恢复"><a href="#备份恢复" class="headerlink" title="备份恢复"></a>备份恢复</h3><ol>
+<li>备份</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo gitlab-rake gitlab:backup:create</div></pre></td></tr></table></figure>
+<blockquote>
+<p>在<code>/var/opt/gitlab/backups</code>目录下会有类似如下格式的备份文件:<br><code>1466811825_gitlab_backup.tar</code></p>
+<ol>
+<li>恢复</li>
+</ol>
+<ul>
+<li>恢复<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># 停止相关数据连接服务</div><div class="line">$ sudo gitlab-ctl stop unicorn </div><div class="line">$ sudo gitlab-ctl stop sidekiq</div><div class="line"></div><div class="line">$ sudo gitlab-rake gitlab:backup:restore BACKUP=xxxx   # xxx为备份文件_gitlab_backup.tar前面的数字</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>启动</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo gitlab-ctl start</div></pre></td></tr></table></figure>
+<h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get update</div><div class="line">$ sudo apt-get install gitlab-ce</div><div class="line">$ sudo apt-get reconfigure</div></pre></td></tr></table></figure>
+<hr>
 
-        
-      </div>
-      
-      
       
     </div>
     
     
     
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>禹都一只猫，热爱IT，支持原创</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://olei.me/content/uploadfile/tpl_options//dswx.png" alt="olei.me 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="https://olei.me/content/uploadfile/tpl_options//dszfb.jpg" alt="olei.me 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/gitlab/" rel="tag"># gitlab</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/19/php-nginx-http-https的basic认证/" rel="next" title="php+nginx+http/https的Basic Authentication认证">
+                <i class="fa fa-chevron-left"></i> php+nginx+http/https的Basic Authentication认证
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -461,7 +668,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于站长"><span class="nav-number">1.</span> <span class="nav-text">关于站长</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于站点"><span class="nav-number">2.</span> <span class="nav-text">关于站点</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#备份恢复"><span class="nav-number">2.</span> <span class="nav-text">备份恢复</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新"><span class="nav-number">3.</span> <span class="nav-text">更新</span></a></li></ol></div>
             
 
           </div>
@@ -610,9 +817,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://liwg1995.github.io/about/index.html';
-          this.page.identifier = 'about/index.html';
-          this.page.title = '关于';
+          this.page.url = 'https://liwg1995.github.io/2017/10/20/gitlab的安装，更新，备份恢复/';
+          this.page.identifier = '2017/10/20/gitlab的安装，更新，备份恢复/';
+          this.page.title = 'gitlab的安装，更新，备份恢复';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://yu-du-yi-zhi-mao.disqus.com/embed.js';
