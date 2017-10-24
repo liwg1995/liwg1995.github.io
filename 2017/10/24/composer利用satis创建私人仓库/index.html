@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="docker,sentry," />
+  <meta name="keywords" content="composer,satis," />
 
 
 
@@ -71,18 +71,18 @@
 
 
 
-<meta name="description" content="安装Docker 脚本  1$ wget -qO- https://get.docker.com/ | sh  源  12345678$ curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -$ sudo add-apt-repository \    &amp;quot;deb [arch">
-<meta name="keywords" content="docker,sentry">
+<meta name="description" content="composer安装12$ curl -sS https://getcomposer.org/installer | php$ mv composer.phar /usr/local/bin/composer 生成satis1$ composer create-project composer/satis --stability=dev --keep-vcs">
+<meta name="keywords" content="composer,satis">
 <meta property="og:type" content="article">
-<meta property="og:title" content="docker下安装sentry">
-<meta property="og:url" content="https://liwg1995.github.io/2017/10/09/docker下安装sentry/index.html">
+<meta property="og:title" content="composer利用satis创建私人仓库">
+<meta property="og:url" content="https://liwg1995.github.io/2017/10/24/composer利用satis创建私人仓库/index.html">
 <meta property="og:site_name" content="禹都一只猫">
-<meta property="og:description" content="安装Docker 脚本  1$ wget -qO- https://get.docker.com/ | sh  源  12345678$ curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -$ sudo add-apt-repository \    &amp;quot;deb [arch">
+<meta property="og:description" content="composer安装12$ curl -sS https://getcomposer.org/installer | php$ mv composer.phar /usr/local/bin/composer 生成satis1$ composer create-project composer/satis --stability=dev --keep-vcs">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-12T10:41:06.121Z">
+<meta property="og:updated_time" content="2017-10-24T09:22:49.355Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="docker下安装sentry">
-<meta name="twitter:description" content="安装Docker 脚本  1$ wget -qO- https://get.docker.com/ | sh  源  12345678$ curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -$ sudo add-apt-repository \    &amp;quot;deb [arch">
+<meta name="twitter:title" content="composer利用satis创建私人仓库">
+<meta name="twitter:description" content="composer安装12$ curl -sS https://getcomposer.org/installer | php$ mv composer.phar /usr/local/bin/composer 生成satis1$ composer create-project composer/satis --stability=dev --keep-vcs">
 
 
 
@@ -112,13 +112,13 @@
 
 
 
-  <link rel="canonical" href="https://liwg1995.github.io/2017/10/09/docker下安装sentry/"/>
+  <link rel="canonical" href="https://liwg1995.github.io/2017/10/24/composer利用satis创建私人仓库/"/>
 
 
 
 
 
-  <title>docker下安装sentry | 禹都一只猫</title>
+  <title>composer利用satis创建私人仓库 | 禹都一只猫</title>
   
 
 
@@ -255,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liwg1995.github.io/2017/10/09/docker下安装sentry/">
+    <link itemprop="mainEntityOfPage" href="https://liwg1995.github.io/2017/10/24/composer利用satis创建私人仓库/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="olei.me">
@@ -272,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">docker下安装sentry</h1>
+          <h1 class="post-title" itemprop="name headline">composer利用satis创建私人仓库</h1>
         
 
         <div class="post-meta">
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-09T18:25:38+08:00">
-                2017-10-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-24T17:17:33+08:00">
+                2017-10-24
               </time>
             
 
@@ -325,9 +325,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/10/09/docker下安装sentry/#comments" itemprop="discussionUrl">
+                <a href="/2017/10/24/composer利用satis创建私人仓库/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/09/docker下安装sentry/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/10/24/composer利用satis创建私人仓库/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -355,47 +355,54 @@
       
 
       
-        <h3 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a><code>安装Docker</code></h3><ul>
-<li>脚本</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ wget -qO- https://get.docker.com/ | sh</div></pre></td></tr></table></figure>
-<ul>
-<li>源</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -</div><div class="line"></div><div class="line">$ sudo add-apt-repository \</div><div class="line">    &quot;deb [arch=amd64] https://mirrors.aliyun.com/docker-ce/linux/ubuntu \</div><div class="line">    $(lsb_release -cs) \</div><div class="line">    stable&quot;</div><div class="line">$ sudo apt-get update</div><div class="line">$ sudo apt-get install docker-ce</div></pre></td></tr></table></figure>
+        <h3 id="composer安装"><a href="#composer安装" class="headerlink" title="composer安装"></a>composer安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ curl -sS https://getcomposer.org/installer | php</div><div class="line">$ mv composer.phar /usr/local/bin/composer</div></pre></td></tr></table></figure>
+<h3 id="生成satis"><a href="#生成satis" class="headerlink" title="生成satis"></a>生成satis</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ composer create-project composer/satis --stability=dev --keep-vcs</div></pre></td></tr></table></figure>
 <a id="more"></a>
-<h3 id="安装docker-compose"><a href="#安装docker-compose" class="headerlink" title="安装docker-compose"></a>安装<code>docker-compose</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pip install -U docker-compose</div></pre></td></tr></table></figure>
+<ul>
+<li>创建<code>statis.json</code>，配置如下：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"> 	 &quot;name&quot;: &quot;My Repository&quot;,</div><div class="line"> 	 &quot;homepage&quot;: &quot;http://packages.example.org&quot;,</div><div class="line"> 	 &quot;repositories&quot;: [</div><div class="line">   		 &#123; &quot;type&quot;: &quot;vcs&quot;, &quot;url&quot;: &quot;https://github.com/mycompany/privaterepo&quot; &#125;,</div><div class="line">   		 &#123; &quot;type&quot;: &quot;vcs&quot;, &quot;url&quot;: &quot;http://svn.example.org/private/repo&quot; &#125;,</div><div class="line">   		 &#123; &quot;type&quot;: &quot;vcs&quot;, &quot;url&quot;: &quot;https://github.com/mycompany/privaterepo2&quot; &#125;</div><div class="line"> 	 ],</div><div class="line"> 	 &quot;require-all&quot;: true</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>require-all:true表示全部的包，需要指定包的，需要更改为：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&quot;require&quot;: &#123;</div><div class="line"> 	  &quot;company/package&quot;: &quot;*&quot;,</div><div class="line">  	  &quot;company/package2&quot;: &quot;*&quot;,</div><div class="line">  	  &quot;company/package3&quot;: &quot;2.0.0&quot;</div><div class="line">｝</div></pre></td></tr></table></figure>
+<h3 id="安装web端"><a href="#安装web端" class="headerlink" title="安装web端"></a>安装web端</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ php bin/satis build satis.json public/</div></pre></td></tr></table></figure>
 <blockquote>
-<p>如果提示没有pip，则需要安装pip<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ apt-get install python-pip</div></pre></td></tr></table></figure></p>
+<p>satis.json就是配置的文件，public时生成的管理网站  </p>
 </blockquote>
-<h3 id="获取sentry"><a href="#获取sentry" class="headerlink" title="获取sentry"></a>获取<code>sentry</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/getsentry/onpremise.git</div></pre></td></tr></table></figure>
-<blockquote>
-<p>cd到onpremise目录下  </p>
-</blockquote>
-<p>1.构建容器并创建数据库和sentry安装目录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mkdir  -p data/&#123;sentry,postgres&#125;</div></pre></td></tr></table></figure>
-<p>2.配置国内源</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cd /etc/docker</div><div class="line">$ touch daemon.json</div></pre></td></tr></table></figure>
-<blockquote>
-<p>在<code>daemon.json</code>里面写入：</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;registry-mirrors&quot;: [&quot;https://docker.mirrors.ustc.edu.cn/&quot;]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ service docker restart</div></pre></td></tr></table></figure>
-<p>3.生成secret key并添加到docker-compose文件里</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ docker-compose run --rm web config generate-secret-key</div></pre></td></tr></table></figure>
-<p>4.重建数据库，并创建sentry超级管理员用户</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ docker-compose run --rm web upgrade</div></pre></td></tr></table></figure>
-<p>5.启动所有的服务</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ docker-compose up -d</div></pre></td></tr></table></figure>
-<h3 id="访问"><a href="#访问" class="headerlink" title="访问"></a>访问</h3><ul>
-<li>访问<code>http://ip:9000</code><ul>
-<li>ip为你本地或者服务器的ip<blockquote>
-<p>以上是ubuntu 16.04下进行</p>
-</blockquote>
-</li>
+<h3 id="部分更新"><a href="#部分更新" class="headerlink" title="部分更新"></a>部分更新</h3><ul>
+<li>单独的一个存储库的话</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ php bin/satis build --repository-url https://only.my/repo.git satis.json web/</div></pre></td></tr></table></figure>
+<h3 id="使用私有源"><a href="#使用私有源" class="headerlink" title="使用私有源"></a>使用私有源</h3><ul>
+<li>只需要在项目的 composer.json 文件的根上添加</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;repositories&quot;: [</div><div class="line">    &#123;</div><div class="line">      &quot;type&quot;: &quot;composer&quot;,</div><div class="line">      &quot;url&quot;: &quot;http://satis仓库地址/&quot;</div><div class="line">    &#125;</div><div class="line">  ],</div><div class="line">  &quot;require&quot;: &#123;</div><div class="line">    &quot;company/package&quot;: &quot;1.2.0&quot;,</div><div class="line">    &quot;company/package2&quot;: &quot;1.5.2&quot;,</div><div class="line">    &quot;company/package3&quot;: &quot;dev-master&quot;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>然后执行<code>composer update</code>即可<ul>
+<li>注意：源里面只有“仓库列表”，并没有真的同步代码仓库过来，所以下载还要走托管代码的机器，比如 GitHub，内部 GitLab 等。</li>
 </ul>
 </li>
+<li>如果从 clone 速度太慢了，我们也可以缓存在我们的仓库中,在satis.json中增加:</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;archive&quot;: &#123;</div><div class="line">        &quot;directory&quot;: &quot;dist&quot;,</div><div class="line">        &quot;format&quot;: &quot;tar&quot;,</div><div class="line">        &quot;prefix-url&quot;: &quot;http://packages.dev.com/&quot;,</div><div class="line">        &quot;skip-dev&quot;: true</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>*1. directory: 必需要的，表示生成的压缩包存放的目录，会在我们build时的目录中</p>
+<ol>
+<li>format: 压缩包格式, zip（默认） tar</li>
+<li>prefix-url: 下载链接的前缀的Url,默认会从homepage中取</li>
+<li>skip-dev: 默认为假，是否跳过开发分支</li>
+<li>absolute-directory: 绝对目录</li>
+<li>whitelist: 白名单，只下载哪些</li>
+<li>blacklist: 黑名单，不下载哪些</li>
+<li>checksum: 可选，是否验证sha1*</li>
+</ol>
+<ul>
+<li>然后重新再次生成就ok了：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ php bin/satis build satis.json public/</div></pre></td></tr></table></figure>
+<blockquote>
+<p>会发现public目录多了一个dist目录，里面有很多tar的压缩包，这就是我们的package。 之后再执行composer update就会发现快了很多。</p>
+</blockquote>
 
       
     </div>
@@ -442,7 +449,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/docker-sentry/" rel="tag"># docker,sentry</a>
+            <a href="/tags/composer/" rel="tag"># composer</a>
+          
+            <a href="/tags/satis/" rel="tag"># satis</a>
           
         </div>
       
@@ -455,8 +464,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/30/初次安装hexo注意的事项/" rel="next" title="初次安装hexo注意的事项">
-                <i class="fa fa-chevron-left"></i> 初次安装hexo注意的事项
+              <a href="/2017/10/20/gitlab的安装，更新，备份恢复/" rel="next" title="gitlab的安装，更新，备份恢复">
+                <i class="fa fa-chevron-left"></i> gitlab的安装，更新，备份恢复
               </a>
             
           </div>
@@ -464,10 +473,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/13/docker基础命令浅谈/" rel="prev" title="docker基础命令浅谈">
-                docker基础命令浅谈 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -662,7 +667,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Docker"><span class="nav-number">1.</span> <span class="nav-text">安装Docker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装docker-compose"><span class="nav-number">2.</span> <span class="nav-text">安装docker-compose</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取sentry"><span class="nav-number">3.</span> <span class="nav-text">获取sentry</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#访问"><span class="nav-number">4.</span> <span class="nav-text">访问</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#composer安装"><span class="nav-number">1.</span> <span class="nav-text">composer安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成satis"><span class="nav-number">2.</span> <span class="nav-text">生成satis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装web端"><span class="nav-number">3.</span> <span class="nav-text">安装web端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部分更新"><span class="nav-number">4.</span> <span class="nav-text">部分更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用私有源"><span class="nav-number">5.</span> <span class="nav-text">使用私有源</span></a></li></ol></div>
             
 
           </div>
@@ -811,9 +816,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://liwg1995.github.io/2017/10/09/docker下安装sentry/';
-          this.page.identifier = '2017/10/09/docker下安装sentry/';
-          this.page.title = 'docker下安装sentry';
+          this.page.url = 'https://liwg1995.github.io/2017/10/24/composer利用satis创建私人仓库/';
+          this.page.identifier = '2017/10/24/composer利用satis创建私人仓库/';
+          this.page.title = 'composer利用satis创建私人仓库';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://yu-du-yi-zhi-mao.disqus.com/embed.js';
