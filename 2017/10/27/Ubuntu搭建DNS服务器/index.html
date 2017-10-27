@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="工具," />
+  <meta name="keywords" content="DNS服务器," />
 
 
 
@@ -71,23 +71,18 @@
 
 
 
-<meta name="description" content="注册 官方网站：DaoVoice 填写信息：">
-<meta name="keywords" content="工具">
+<meta name="description" content="系统环境:Ubuntu 16.04.3 LTS内网IP : 192.168.1.110  安装12$ apt-get update$ apt-get install bind9">
+<meta name="keywords" content="DNS服务器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo next中接入DaoVoice">
-<meta property="og:url" content="https://liwg1995.github.io/2017/10/25/hexo-next中接入DaoVoice/index.html">
+<meta property="og:title" content="Ubuntu搭建DNS服务器">
+<meta property="og:url" content="https://liwg1995.github.io/2017/10/27/Ubuntu搭建DNS服务器/index.html">
 <meta property="og:site_name" content="禹都一只猫">
-<meta property="og:description" content="注册 官方网站：DaoVoice 填写信息：">
+<meta property="og:description" content="系统环境:Ubuntu 16.04.3 LTS内网IP : 192.168.1.110  安装12$ apt-get update$ apt-get install bind9">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://onsjbscqd.bkt.clouddn.com/image/daovoice_05.png">
-<meta property="og:image" content="http://onsjbscqd.bkt.clouddn.com/image/daovoice_03.png">
-<meta property="og:image" content="http://onsjbscqd.bkt.clouddn.com/image/daovoice_08.png">
-<meta property="og:image" content="http://onsjbscqd.bkt.clouddn.com/image/daovoice_07.png">
-<meta property="og:updated_time" content="2017-10-25T06:19:15.608Z">
+<meta property="og:updated_time" content="2017-10-27T06:09:17.221Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo next中接入DaoVoice">
-<meta name="twitter:description" content="注册 官方网站：DaoVoice 填写信息：">
-<meta name="twitter:image" content="http://onsjbscqd.bkt.clouddn.com/image/daovoice_05.png">
+<meta name="twitter:title" content="Ubuntu搭建DNS服务器">
+<meta name="twitter:description" content="系统环境:Ubuntu 16.04.3 LTS内网IP : 192.168.1.110  安装12$ apt-get update$ apt-get install bind9">
 
 
 
@@ -117,13 +112,13 @@
 
 
 
-  <link rel="canonical" href="https://liwg1995.github.io/2017/10/25/hexo-next中接入DaoVoice/"/>
+  <link rel="canonical" href="https://liwg1995.github.io/2017/10/27/Ubuntu搭建DNS服务器/"/>
 
 
 
 
 
-  <title>hexo next中接入DaoVoice | 禹都一只猫</title>
+  <title>Ubuntu搭建DNS服务器 | 禹都一只猫</title>
   
 
 
@@ -260,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liwg1995.github.io/2017/10/25/hexo-next中接入DaoVoice/">
+    <link itemprop="mainEntityOfPage" href="https://liwg1995.github.io/2017/10/27/Ubuntu搭建DNS服务器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="olei.me">
@@ -277,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hexo next中接入DaoVoice</h1>
+          <h1 class="post-title" itemprop="name headline">Ubuntu搭建DNS服务器</h1>
         
 
         <div class="post-meta">
@@ -289,8 +284,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-25T14:15:06+08:00">
-                2017-10-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-27T14:07:00+08:00">
+                2017-10-27
               </time>
             
 
@@ -312,8 +307,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/建站/" itemprop="url" rel="index">
-                    <span itemprop="name">建站</span>
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
                   </a>
                 </span>
 
@@ -330,9 +325,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/10/25/hexo-next中接入DaoVoice/#comments" itemprop="discussionUrl">
+                <a href="/2017/10/27/Ubuntu搭建DNS服务器/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/25/hexo-next中接入DaoVoice/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/10/27/Ubuntu搭建DNS服务器/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -360,43 +355,56 @@
       
 
       
-        <h3 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h3><ul>
-<li>官方网站：<a href="http://www.daovoice.io/" target="_blank" rel="external">DaoVoice</a></li>
-<li>填写信息：</li>
-</ul>
+        <blockquote>
+<p>系统环境:<br>Ubuntu 16.04.3 LTS<br>内网IP : 192.168.1.110</p>
+</blockquote>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ apt-get update</div><div class="line">$ apt-get install bind9</div></pre></td></tr></table></figure>
 <a id="more"></a>
-<p><img src="http://onsjbscqd.bkt.clouddn.com/image/daovoice_05.png" alt=""></p>
+<h3 id="配置缓存转发"><a href="#配置缓存转发" class="headerlink" title="配置缓存转发"></a>配置缓存转发</h3><ul>
+<li>打开打开<code>/etc/bind/named.conf.options</code>,修改后如下:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">acl goodclients &#123;</div><div class="line">        192.168.1.0/24;</div><div class="line">        localhost;</div><div class="line">        localnets;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">options &#123;</div><div class="line">        directory &quot;/var/cache/bind&quot;;</div><div class="line"></div><div class="line">        // If there is a firewall between you and nameservers you want</div><div class="line">        // to talk to, you may need to fix the firewall to allow multiple</div><div class="line">        // ports to talk.  See http://www.kb.cert.org/vuls/id/800113</div><div class="line"></div><div class="line">        // If your ISP provided one or more IP addresses for stable</div><div class="line">        // nameservers, you probably want to use them as forwarders.</div><div class="line">        // Uncomment the following block, and insert the addresses replacing</div><div class="line">        // the all-0&apos;s placeholder.</div><div class="line"></div><div class="line">        // forwarders &#123;</div><div class="line">        //      0.0.0.0;</div><div class="line">        // &#125;;</div><div class="line"></div><div class="line">        //========================================================================</div><div class="line">        // If BIND logs error messages about the root key being expired,</div><div class="line">        // you will need to update your keys.  See https://www.isc.org/bind-keys</div><div class="line">        //========================================================================</div><div class="line">        dnssec-validation auto;</div><div class="line"></div><div class="line">        auth-nxdomain no;    # conform to RFC1035</div><div class="line">        listen-on-v6 &#123; any; &#125;;</div><div class="line"></div><div class="line">        //added</div><div class="line">        listen-on &#123; 192.168.1.110;&#125;;</div><div class="line"></div><div class="line">        recursion yes ;</div><div class="line">        allow-query &#123; goodclients;&#125;;</div><div class="line">        allow-transfer &#123; none; &#125;; # disable zone transfers by default</div><div class="line"></div><div class="line">        forwarders &#123;</div><div class="line">                223.5.5.5; # alidns</div><div class="line">                223.6.6.6; # alidns</div><div class="line">        &#125;;</div><div class="line">        forward only ;</div><div class="line"></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="配置local文件"><a href="#配置local文件" class="headerlink" title="配置local文件"></a>配置local文件</h3><ul>
+<li><code>named.conf.local</code> 文件默认是空的。本文在配置文件中分别定义一条<code>正向解析</code>和一条<code>反向解析</code>。配置文件修改后类似如下:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//domain-&gt;ip</div><div class="line">zone &quot;local.com&quot; in &#123;</div><div class="line">        type master;</div><div class="line">        file &quot;/var/cache/bind/db.local.com&quot;;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">//ip-&gt;domain</div><div class="line">zone &quot;1.168.192.in-addr.arpa&quot; in &#123;</div><div class="line">        type master;</div><div class="line">        file &quot;/var/cache/bind/db.1.168.192&quot;;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="定义区域配置文件"><a href="#定义区域配置文件" class="headerlink" title="定义区域配置文件"></a>定义区域配置文件</h3><blockquote>
+<p>配置文件定义后类似如下，分别是正向和反向两个解析记录。按照自己需求修改相应的区域和区域解析记录，IP等信息。</p>
 <ul>
-<li>进入<code>应用设置</code> -&gt; <code>安装到网站</code><br><img src="http://onsjbscqd.bkt.clouddn.com/image/daovoice_03.png" alt=""></li>
-<li>获取<code>接入代码</code>和<code>app_id</code><br><img src="http://onsjbscqd.bkt.clouddn.com/image/daovoice_08.png" alt=""></li>
+<li>正向记录</li>
 </ul>
-<h3 id="编写主题配置文件"><a href="#编写主题配置文件" class="headerlink" title="编写主题配置文件"></a>编写主题配置文件</h3><ul>
-<li>找到<code>themes/next/_config.yml</code>目录</li>
-<li>增加以下配置，其中 <code>app_id</code> 就是上图中红框中的 <code>app_id</code></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">daovoice:</div><div class="line">  enable: true</div><div class="line">  app_id: ******</div></pre></td></tr></table></figure>
-<h3 id="编写DaoVoice接入代码"><a href="#编写DaoVoice接入代码" class="headerlink" title="编写DaoVoice接入代码"></a>编写<code>DaoVoice</code>接入代码</h3><ul>
-<li>找到<code>themes/next/layout/_third-party/</code>目录</li>
-<li>在该目录下新增<code>daovoice/daovoice.swig</code> 文件</li>
-<li><code>daovoice.swig</code>文件中写入<code>DaoVoice</code> 接入代码</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&#123;% if theme.daovoice.enable %&#125;</div><div class="line">   &lt;script&gt;</div><div class="line">     (function(i,s,o,g,r,a,m)&#123;</div><div class="line">     i[&quot;DaoVoiceObject&quot;]=r;</div><div class="line">     i[r]=i[r]||function()&#123;</div><div class="line">     (i[r].q=i[r].q||[]).push(arguments)&#125;,</div><div class="line">     i[r].l=1*new Date();</div><div class="line">     a=s.createElement(o),</div><div class="line">     m=s.getElementsByTagName(o)[0];</div><div class="line">     a.async=1;</div><div class="line">     a.src=g;</div><div class="line">     a.charset=&quot;utf-8&quot;;</div><div class="line">     m.parentNode.insertBefore(a,m)</div><div class="line">     &#125;)(window,document,&quot;script&quot;,(&apos;https:&apos; == document.location.protocol ? &apos;https:&apos; : &apos;http:&apos;) + &quot;//widget.daovoice.io/widget/&#123;&#123; theme.daovoice.app_id &#125;&#125;.js&quot;,&quot;daovoice&quot;)</div><div class="line">     daovoice(&apos;init&apos;, &#123;</div><div class="line">     app_id: &quot;&#123;&#123; theme.daovoice.app_id &#125;&#125;&quot;</div><div class="line">     &#125;);</div><div class="line">     daovoice(&apos;update&apos;);</div><div class="line">   &lt;/script&gt;</div><div class="line"> &#123;% endif %&#125;</div></pre></td></tr></table></figure>
-<h3 id="在模板文件里引入DaoVoice接入代码"><a href="#在模板文件里引入DaoVoice接入代码" class="headerlink" title="在模板文件里引入DaoVoice接入代码"></a>在模板文件里引入<code>DaoVoice</code>接入代码</h3><ul>
-<li>找到<code>themes/next/layout/_layout.swig</code>文件</li>
-<li>引入刚才我们上面写的 daovoice.swig 文件</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% include &apos;_third-party/daovoice/daovoice.swig&apos; %&#125;</div></pre></td></tr></table></figure>
-<h3 id="检验是否接入成功"><a href="#检验是否接入成功" class="headerlink" title="检验是否接入成功"></a>检验是否接入成功</h3><ul>
-<li>运行如下：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo g    // 生成静态文件</div><div class="line">$ hexo s    // 在本地起测试服务器</div></pre></td></tr></table></figure>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo vim /var/cache/bind/db.local.com</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">$TTL 604800</div><div class="line">@ IN SOA local.com. root.local.com. (</div><div class="line">2 ; Serial</div><div class="line">604800 ; Refresh</div><div class="line">86400 ; Retry</div><div class="line">2419200 ; Expire</div><div class="line">604000) ; Negative Cache TTL</div><div class="line">;</div><div class="line">; name servers</div><div class="line">@ IN NS ns.local.com.</div><div class="line">@ IN A 192.168.1.110</div><div class="line">;ns records</div><div class="line">ns IN A 192.168.1.110</div><div class="line">;host records</div><div class="line">www IN A 192.168.1.110</div><div class="line">api IN A 192.168.1.100</div></pre></td></tr></table></figure>
 <ul>
-<li>查看 <code>http://localhost:4000/</code> 页面是否右下角已经有了 <code>DaoVoice</code> 小图标<br><img src="http://onsjbscqd.bkt.clouddn.com/image/daovoice_07.png" alt=""></li>
-<li>之后运行：</li>
+<li>反向记录</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo d   #上传到github上</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo vim /var/cache/bind/db.1.168.192</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$TTL 604800</div><div class="line">@ IN SOA local.com. root.local.com. (</div><div class="line">2 ; Serial Number</div><div class="line">604800 ; Refresh</div><div class="line">86400 ; Retry</div><div class="line">2419200 ; Expire</div><div class="line">86400 ); ; Minimum</div><div class="line"></div><div class="line">@ IN NS local.com.</div><div class="line"></div><div class="line">66 IN PTR www.local.com.</div><div class="line">66 IN PTR api.local.com.</div></pre></td></tr></table></figure>
 <blockquote>
-<p><code>DaoVoice</code> 的这个小图标可以自定义样式和位置, 可以调整到你喜欢的位置<br>引用：<a href="http://olivewind.com/2017/17040305/" target="_blank" rel="external">http://olivewind.com/2017/17040305/</a></p>
+<p>以上两个文件均写在<code>/var/cache/bind</code> 下</p>
+<h3 id="检查配置、重启"><a href="#检查配置、重启" class="headerlink" title="检查配置、重启"></a>检查配置、重启</h3><ul>
+<li>检查</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cd /var/cache/bind</div><div class="line">$ named-checkzone local.com /var/cache/bind/db.local.com</div></pre></td></tr></table></figure>
+<p>输出：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">zone local.com/IN: loaded serial 2</div><div class="line">OK</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ named-checkzone db.1.168.192 /var/cache/bind/db.1.168.192</div></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">zone db.1.168.192/IN: loaded serial 2</div><div class="line">OK</div></pre></td></tr></table></figure>
+<blockquote>
+<p>分别检查了语法和区域配置文件，没有报错。重启bind服务。</p>
+</blockquote>
+<ul>
+<li>重启</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo service bind9 restart</div></pre></td></tr></table></figure>
+<blockquote>
+<p>到这里DNS服务器的配置就完成了</p>
+<h3 id="配置路由器首要DNS"><a href="#配置路由器首要DNS" class="headerlink" title="配置路由器首要DNS"></a>配置路由器首要DNS</h3><ul>
+<li>在路由器里设置<code>首要DNS</code> 为 <code>192.168.1.110</code> ，这样我们就可以在同一个内网下访问：<code>www.local.com</code> 就会指向到 <code>192.168.1.110</code>，访问：<code>api.local.com</code> 就会指向到 <code>192.168.1.100</code></li>
+</ul>
 </blockquote>
 
       
@@ -444,7 +452,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/工具/" rel="tag"># 工具</a>
+            <a href="/tags/DNS服务器/" rel="tag"># DNS服务器</a>
           
         </div>
       
@@ -455,6 +463,37 @@
       <div>
       
         
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+  <p><span>本文标题:</span><a href="/2017/10/27/Ubuntu搭建DNS服务器/">Ubuntu搭建DNS服务器</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 olei.me 的个人博客">olei.me</a></p>
+  <p><span>发布时间:</span>2017年10月27日 - 14:10</p>
+  <p><span>最后更新:</span>2017年10月27日 - 14:10</p>
+  <p><span>原始链接:</span><a href="/2017/10/27/Ubuntu搭建DNS服务器/" title="Ubuntu搭建DNS服务器">https://liwg1995.github.io/2017/10/27/Ubuntu搭建DNS服务器/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://liwg1995.github.io/2017/10/27/Ubuntu搭建DNS服务器/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+	clipboard.on('success', $(function(){
+	  $(".fa-clipboard").click(function(){
+		swal({   
+		  title: "",   
+		  text: '复制成功',   
+		  html: false,
+		  timer: 500,   
+		  showConfirmButton: false
+	    });
+	  });
+    }));  
+</script>
+
 
       
       </div>
@@ -469,8 +508,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/24/composer利用satis创建私人仓库/" rel="next" title="composer利用satis创建私人仓库">
-                <i class="fa fa-chevron-left"></i> composer利用satis创建私人仓库
+              <a href="/2017/10/25/hexo-next中接入DaoVoice/" rel="next" title="hexo next中接入DaoVoice">
+                <i class="fa fa-chevron-left"></i> hexo next中接入DaoVoice
               </a>
             
           </div>
@@ -478,10 +517,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/27/Ubuntu搭建DNS服务器/" rel="prev" title="Ubuntu搭建DNS服务器">
-                Ubuntu搭建DNS服务器 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -676,7 +711,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#注册"><span class="nav-number">1.</span> <span class="nav-text">注册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编写主题配置文件"><span class="nav-number">2.</span> <span class="nav-text">编写主题配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编写DaoVoice接入代码"><span class="nav-number">3.</span> <span class="nav-text">编写DaoVoice接入代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在模板文件里引入DaoVoice接入代码"><span class="nav-number">4.</span> <span class="nav-text">在模板文件里引入DaoVoice接入代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#检验是否接入成功"><span class="nav-number">5.</span> <span class="nav-text">检验是否接入成功</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置缓存转发"><span class="nav-number">2.</span> <span class="nav-text">配置缓存转发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置local文件"><span class="nav-number">3.</span> <span class="nav-text">配置local文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义区域配置文件"><span class="nav-number">4.</span> <span class="nav-text">定义区域配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#检查配置、重启"><span class="nav-number">5.</span> <span class="nav-text">检查配置、重启</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置路由器首要DNS"><span class="nav-number">6.</span> <span class="nav-text">配置路由器首要DNS</span></a></li></ol></div>
             
 
           </div>
@@ -825,9 +860,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://liwg1995.github.io/2017/10/25/hexo-next中接入DaoVoice/';
-          this.page.identifier = '2017/10/25/hexo-next中接入DaoVoice/';
-          this.page.title = 'hexo next中接入DaoVoice';
+          this.page.url = 'https://liwg1995.github.io/2017/10/27/Ubuntu搭建DNS服务器/';
+          this.page.identifier = '2017/10/27/Ubuntu搭建DNS服务器/';
+          this.page.title = 'Ubuntu搭建DNS服务器';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://yu-du-yi-zhi-mao.disqus.com/embed.js';
