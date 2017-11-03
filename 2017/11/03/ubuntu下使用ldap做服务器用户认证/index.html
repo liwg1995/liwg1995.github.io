@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="composer,satis," />
+  <meta name="keywords" content="openldap," />
 
 
 
@@ -71,18 +71,18 @@
 
 
 
-<meta name="description" content="composer安装12$ curl -sS https://getcomposer.org/installer | php$ mv composer.phar /usr/local/bin/composer 生成satis1$ composer create-project composer/satis --stability=dev --keep-vcs">
-<meta name="keywords" content="composer,satis">
+<meta name="description" content="server端 安装openldap 参考:openldap安装   安装migrationtools">
+<meta name="keywords" content="openldap">
 <meta property="og:type" content="article">
-<meta property="og:title" content="composer利用satis创建私人仓库">
-<meta property="og:url" content="https://liwg1995.github.io/2017/10/24/composer利用satis创建私人仓库/index.html">
+<meta property="og:title" content="ubuntu下使用ldap做服务器用户认证">
+<meta property="og:url" content="https://liwg1995.github.io/2017/11/03/ubuntu下使用ldap做服务器用户认证/index.html">
 <meta property="og:site_name" content="禹都一只猫">
-<meta property="og:description" content="composer安装12$ curl -sS https://getcomposer.org/installer | php$ mv composer.phar /usr/local/bin/composer 生成satis1$ composer create-project composer/satis --stability=dev --keep-vcs">
+<meta property="og:description" content="server端 安装openldap 参考:openldap安装   安装migrationtools">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-24T10:32:57.491Z">
+<meta property="og:updated_time" content="2017-11-03T11:45:43.007Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="composer利用satis创建私人仓库">
-<meta name="twitter:description" content="composer安装12$ curl -sS https://getcomposer.org/installer | php$ mv composer.phar /usr/local/bin/composer 生成satis1$ composer create-project composer/satis --stability=dev --keep-vcs">
+<meta name="twitter:title" content="ubuntu下使用ldap做服务器用户认证">
+<meta name="twitter:description" content="server端 安装openldap 参考:openldap安装   安装migrationtools">
 
 
 
@@ -112,13 +112,13 @@
 
 
 
-  <link rel="canonical" href="https://liwg1995.github.io/2017/10/24/composer利用satis创建私人仓库/"/>
+  <link rel="canonical" href="https://liwg1995.github.io/2017/11/03/ubuntu下使用ldap做服务器用户认证/"/>
 
 
 
 
 
-  <title>composer利用satis创建私人仓库 | 禹都一只猫</title>
+  <title>ubuntu下使用ldap做服务器用户认证 | 禹都一只猫</title>
   
 
 
@@ -255,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liwg1995.github.io/2017/10/24/composer利用satis创建私人仓库/">
+    <link itemprop="mainEntityOfPage" href="https://liwg1995.github.io/2017/11/03/ubuntu下使用ldap做服务器用户认证/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="olei.me">
@@ -272,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">composer利用satis创建私人仓库</h1>
+          <h1 class="post-title" itemprop="name headline">ubuntu下使用ldap做服务器用户认证</h1>
         
 
         <div class="post-meta">
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-24T17:17:33+08:00">
-                2017-10-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-03T19:40:21+08:00">
+                2017-11-03
               </time>
             
 
@@ -325,9 +325,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/10/24/composer利用satis创建私人仓库/#comments" itemprop="discussionUrl">
+                <a href="/2017/11/03/ubuntu下使用ldap做服务器用户认证/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/24/composer利用satis创建私人仓库/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/11/03/ubuntu下使用ldap做服务器用户认证/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -355,54 +355,51 @@
       
 
       
-        <h3 id="composer安装"><a href="#composer安装" class="headerlink" title="composer安装"></a>composer安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ curl -sS https://getcomposer.org/installer | php</div><div class="line">$ mv composer.phar /usr/local/bin/composer</div></pre></td></tr></table></figure>
-<h3 id="生成satis"><a href="#生成satis" class="headerlink" title="生成satis"></a>生成satis</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ composer create-project composer/satis --stability=dev --keep-vcs</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<ul>
-<li>创建<code>statis.json</code>，配置如下：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"> 	 &quot;name&quot;: &quot;My Repository&quot;,</div><div class="line"> 	 &quot;homepage&quot;: &quot;http://packages.example.org&quot;,</div><div class="line"> 	 &quot;repositories&quot;: [</div><div class="line">   		 &#123; &quot;type&quot;: &quot;vcs&quot;, &quot;url&quot;: &quot;https://github.com/mycompany/privaterepo&quot; &#125;,</div><div class="line">   		 &#123; &quot;type&quot;: &quot;vcs&quot;, &quot;url&quot;: &quot;http://svn.example.org/private/repo&quot; &#125;,</div><div class="line">   		 &#123; &quot;type&quot;: &quot;vcs&quot;, &quot;url&quot;: &quot;https://github.com/mycompany/privaterepo2&quot; &#125;</div><div class="line"> 	 ],</div><div class="line"> 	 &quot;require-all&quot;: true</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>require-all:true表示全部的包，需要指定包的，需要更改为：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&quot;require&quot;: &#123;</div><div class="line"> 	  &quot;company/package&quot;: &quot;*&quot;,</div><div class="line">  	  &quot;company/package2&quot;: &quot;*&quot;,</div><div class="line">  	  &quot;company/package3&quot;: &quot;2.0.0&quot;</div><div class="line">｝</div></pre></td></tr></table></figure>
-<h3 id="安装web端"><a href="#安装web端" class="headerlink" title="安装web端"></a>安装web端</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ php bin/satis build satis.json public/</div></pre></td></tr></table></figure>
-<blockquote>
-<p>satis.json就是配置的文件，public时生成的管理网站  </p>
-</blockquote>
-<h3 id="部分更新"><a href="#部分更新" class="headerlink" title="部分更新"></a>部分更新</h3><ul>
-<li>单独的一个存储库的话</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ php bin/satis build --repository-url https://only.my/repo.git satis.json web/</div></pre></td></tr></table></figure>
-<h3 id="使用私有源"><a href="#使用私有源" class="headerlink" title="使用私有源"></a>使用私有源</h3><ul>
-<li>只需要在项目的 composer.json 文件的根上添加</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;repositories&quot;: [</div><div class="line">    &#123;</div><div class="line">      &quot;type&quot;: &quot;composer&quot;,</div><div class="line">      &quot;url&quot;: &quot;http://satis仓库地址/&quot;</div><div class="line">    &#125;</div><div class="line">  ],</div><div class="line">  &quot;require&quot;: &#123;</div><div class="line">    &quot;company/package&quot;: &quot;1.2.0&quot;,</div><div class="line">    &quot;company/package2&quot;: &quot;1.5.2&quot;,</div><div class="line">    &quot;company/package3&quot;: &quot;dev-master&quot;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>然后执行<code>composer update</code>即可<ul>
-<li>注意：源里面只有“仓库列表”，并没有真的同步代码仓库过来，所以下载还要走托管代码的机器，比如 GitHub，内部 GitLab 等。</li>
+        <h3 id="server端"><a href="#server端" class="headerlink" title="server端"></a><code>server</code>端</h3><ul>
+<li>安装<code>openldap</code><ul>
+<li>参考:<a href="http://blog.olei.me/2017/10/18/ubuntu16-04%E5%AE%89%E8%A3%85openldap%E4%BB%A5%E5%8F%8Aphpldapadmin/" target="_blank" rel="external">openldap安装</a></li>
 </ul>
 </li>
-<li>如果从 clone 速度太慢了，我们也可以缓存在我们的仓库中,在satis.json中增加:</li>
+<li>安装<code>migrationtools</code><a id="more"></a>
+</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;archive&quot;: &#123;</div><div class="line">        &quot;directory&quot;: &quot;dist&quot;,</div><div class="line">        &quot;format&quot;: &quot;tar&quot;,</div><div class="line">        &quot;prefix-url&quot;: &quot;http://packages.dev.com/&quot;,</div><div class="line">        &quot;skip-dev&quot;: true</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>*1. directory: 必需要的，表示生成的压缩包存放的目录，会在我们build时的目录中</p>
-<ol>
-<li>format: 压缩包格式, zip（默认） tar</li>
-<li>prefix-url: 下载链接的前缀的Url,默认会从homepage中取</li>
-<li>skip-dev: 默认为假，是否跳过开发分支</li>
-<li>absolute-directory: 绝对目录</li>
-<li>whitelist: 白名单，只下载哪些</li>
-<li>blacklist: 黑名单，不下载哪些</li>
-<li>checksum: 可选，是否验证sha1*</li>
-</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ apt-get install migrationtools</div></pre></td></tr></table></figure>
 <ul>
-<li>然后重新再次生成就ok了：</li>
+<li>修改<code>migrate_common.sh</code>，该文件在<code>/etc/migrationtools</code>文件夹下</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ php bin/satis build satis.json public/</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ DEFAULT_MAIL_DOMAIN = &quot;olei.me&quot;; </div><div class="line">$ DEFAULT_BASE = &quot;dc=olei,dc=me&quot;;</div></pre></td></tr></table></figure>
 <blockquote>
-<p>会发现public目录多了一个dist目录，里面有很多tar的压缩包，这就是我们的package。 之后再执行composer update就会发现快了很多。</p>
+<p>以上的东西改成自己的</p>
 </blockquote>
+<ul>
+<li>配置</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ cd /usr/share/migrationtools</div><div class="line">$ ./migrate_base.pl &gt; /tmp/base.ldif</div><div class="line">$ ./migrate_passwd.pl /etc/passwd&gt; /tmp/passwd.ldif</div><div class="line">$ ./migrate_group.pl /etc/group&gt; /tmp/group.ldif</div><div class="line">$ ldapadd -x -D &quot;cn=admin,dc=olei,dc=me&quot; -W -f /tmp/base.ldif</div><div class="line">$ ldapadd -x -D &quot;cn=admin,dc=olei,dc=me&quot; -W -f /tmp/passwd.ldif</div><div class="line">$ ldapadd -x -D &quot;cn=admin,dc=olei,dc=me&quot; -W -f /tmp/group.ldif</div></pre></td></tr></table></figure>
+<h3 id="client端"><a href="#client端" class="headerlink" title="client端"></a><code>client</code>端</h3><h4 id="手动方式"><a href="#手动方式" class="headerlink" title="手动方式"></a>手动方式</h4><h2 id="手动方式-1"><a href="#手动方式-1" class="headerlink" title="手动方式"></a>手动方式</h2><h3 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ apt-get install ldap-utils libpam-ldap libnss-ldap nslcd</div></pre></td></tr></table></figure>
+<blockquote>
+<p>期间配置一些server端的信息  </p>
+<h3 id="认证方式中添加ldap"><a href="#认证方式中添加ldap" class="headerlink" title="认证方式中添加ldap"></a>认证方式中添加ldap</h3></blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ auth-client-config -t nss -p lac_ldap</div></pre></td></tr></table></figure>
+<h3 id="查看-etc-nsswitch-conf"><a href="#查看-etc-nsswitch-conf" class="headerlink" title="查看/etc/nsswitch.conf"></a>查看/etc/nsswitch.conf</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vim /etc/nsswitch.conf</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># 可以看到多了如下的东西</div><div class="line">passwd:     files ldap</div><div class="line">group:      files ldap</div><div class="line">shadow:     files ldap</div></pre></td></tr></table></figure>
+<h3 id="使认证通过后自动创建用户家目录"><a href="#使认证通过后自动创建用户家目录" class="headerlink" title="使认证通过后自动创建用户家目录"></a>使认证通过后自动创建用户家目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vim /etc/pam.d/common-session</div></pre></td></tr></table></figure>
+<blockquote>
+<p>添加：session required pam_mkhomedir.so skel=/etc/skel umask=0022 </p>
+</blockquote>
+<h3 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ /etc/pam.d/libnss-ldap restart</div></pre></td></tr></table></figure>
+<h3 id="配置可在本机通过passwd更改用户密码"><a href="#配置可在本机通过passwd更改用户密码" class="headerlink" title="配置可在本机通过passwd更改用户密码"></a>配置可在本机通过passwd更改用户密码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ vim /etc/pam.d/common-password  #除去其中的use_authtok参数</div><div class="line">$ /etc/init.d/nscd restart</div></pre></td></tr></table></figure>
+<ul>
+<li>登陆或切换用户时即通过ldap进行认证，如切换为ldap中的用户manager  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ su - manager</div></pre></td></tr></table></figure>
+<blockquote>
+<p>Password:<strong>*</strong><br>Creating directory ‘/home/manager’.<br>manager@ldapclient:~$  </p>
+</blockquote>
+<h4 id="脚本方式"><a href="#脚本方式" class="headerlink" title="脚本方式"></a>脚本方式</h4><ul>
+<li>代码：<h2 id="脚本方式-1"><a href="#脚本方式-1" class="headerlink" title="脚本方式"></a>脚本方式</h2><h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash  </div><div class="line">  </div><div class="line">#--------------------------------------------------------------------------------  </div><div class="line">  </div><div class="line">#Ldap server地址及base DN  </div><div class="line">LDAP_SERVER_IP=xxx.xx.xx.xx  </div><div class="line">BASE_DN=&apos;dc=olei,dc=me&apos;  </div><div class="line">  </div><div class="line">#--------------------------------------------------------------------------------  </div><div class="line">  </div><div class="line">#创建preseed文件-软件安装自应答  </div><div class="line">touch debconf-ldap-preseed.txt  </div><div class="line">echo &quot;ldap-auth-config    ldap-auth-config/ldapns/ldap-server    string    ldap://$LDAP_SERVER_IP&quot; &gt;&gt; debconf-ldap-preseed.txt  </div><div class="line">echo &quot;ldap-auth-config    ldap-auth-config/ldapns/base-dn    string    $BASE_DN&quot; &gt;&gt; debconf-ldap-preseed.txt  </div><div class="line">echo &quot;ldap-auth-config    ldap-auth-config/ldapns/ldap_version    select    3&quot; &gt;&gt; debconf-ldap-preseed.txt  </div><div class="line">echo &quot;ldap-auth-config    ldap-auth-config/dbrootlogin    boolean    false&quot; &gt;&gt; debconf-ldap-preseed.txt  </div><div class="line">echo &quot;ldap-auth-config    ldap-auth-config/dblogin    boolean    false&quot; &gt;&gt; debconf-ldap-preseed.txt  </div><div class="line">echo &quot;nslcd   nslcd/ldap-uris string  ldap://$LDAP_SERVER_IP&quot; &gt;&gt; debconf-ldap-preseed.txt  </div><div class="line">echo &quot;nslcd   nslcd/ldap-base string  $BASE_DN&quot; &gt;&gt; debconf-ldap-preseed.txt  </div><div class="line">  </div><div class="line">cat debconf-ldap-preseed.txt | debconf-set-selections  </div><div class="line">  </div><div class="line">#安装ldap client相关软件  </div><div class="line">apt-get install -y ldap-utils libpam-ldap libnss-ldap nslcd  </div><div class="line">  </div><div class="line">#认证方式中添加ldap  </div><div class="line">auth-client-config -t nss -p lac_ldap  </div><div class="line">  </div><div class="line">#认证登录后自动创建用户家目录  </div><div class="line">echo &quot;session required pam_mkhomedir.so skel=/etc/skel umask=0022&quot; &gt;&gt; /etc/pam.d/common-session  </div><div class="line">  </div><div class="line">#自启动服务 </div><div class="line">/etc/init.d/libnss-ldap restart</div><div class="line">update-rc.d nslcd enable  </div><div class="line">  </div><div class="line">#可以在Host上通过passwd更改用户密码  </div><div class="line">cp /etc/pam.d/common-password /etc/pam.d/common-password.bak  </div><div class="line">sed -i &apos;s/use_authtok//&apos; /etc/pam.d/common-password  </div><div class="line">  </div><div class="line">#使配置生效  </div><div class="line">/etc/init.d/nscd restart</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
 
       
     </div>
@@ -449,9 +446,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/composer/" rel="tag"># composer</a>
-          
-            <a href="/tags/satis/" rel="tag"># satis</a>
+            <a href="/tags/openldap/" rel="tag"># openldap</a>
           
         </div>
       
@@ -462,37 +457,6 @@
       <div>
       
         
-<div class="my_post_copyright">
-  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
-  
-  <!-- JS库 sweetalert 可修改路径 -->
-  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
-  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
-  <p><span>本文标题:</span><a href="/2017/10/24/composer利用satis创建私人仓库/">composer利用satis创建私人仓库</a></p>
-  <p><span>文章作者:</span><a href="/" title="访问 olei.me 的个人博客">olei.me</a></p>
-  <p><span>发布时间:</span>2017年10月24日 - 17:10</p>
-  <p><span>最后更新:</span>2017年10月24日 - 18:10</p>
-  <p><span>原始链接:</span><a href="/2017/10/24/composer利用satis创建私人仓库/" title="composer利用satis创建私人仓库">https://liwg1995.github.io/2017/10/24/composer利用satis创建私人仓库/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://liwg1995.github.io/2017/10/24/composer利用satis创建私人仓库/"  aria-label="复制成功！"></i></span>
-  </p>
-  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
-</div>
-<script> 
-    var clipboard = new Clipboard('.fa-clipboard');
-	clipboard.on('success', $(function(){
-	  $(".fa-clipboard").click(function(){
-		swal({   
-		  title: "",   
-		  text: '复制成功',   
-		  html: false,
-		  timer: 500,   
-		  showConfirmButton: false
-	    });
-	  });
-    }));  
-</script>
-
 
       
       </div>
@@ -507,8 +471,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/20/gitlab的安装，更新，备份恢复/" rel="next" title="gitlab的安装，更新，备份恢复">
-                <i class="fa fa-chevron-left"></i> gitlab的安装，更新，备份恢复
+              <a href="/2017/10/27/Ubuntu搭建DNS服务器/" rel="next" title="Ubuntu搭建DNS服务器">
+                <i class="fa fa-chevron-left"></i> Ubuntu搭建DNS服务器
               </a>
             
           </div>
@@ -516,10 +480,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/25/hexo-next中接入DaoVoice/" rel="prev" title="hexo next中接入DaoVoice">
-                hexo next中接入DaoVoice <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -714,7 +674,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#composer安装"><span class="nav-number">1.</span> <span class="nav-text">composer安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成satis"><span class="nav-number">2.</span> <span class="nav-text">生成satis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装web端"><span class="nav-number">3.</span> <span class="nav-text">安装web端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部分更新"><span class="nav-number">4.</span> <span class="nav-text">部分更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用私有源"><span class="nav-number">5.</span> <span class="nav-text">使用私有源</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#server端"><span class="nav-number">1.</span> <span class="nav-text">server端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#client端"><span class="nav-number">2.</span> <span class="nav-text">client端</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#手动方式"><span class="nav-number">2.1.</span> <span class="nav-text">手动方式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#手动方式-1"><span class="nav-number"></span> <span class="nav-text">手动方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装软件"><span class="nav-number">1.</span> <span class="nav-text">安装软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#认证方式中添加ldap"><span class="nav-number">2.</span> <span class="nav-text">认证方式中添加ldap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看-etc-nsswitch-conf"><span class="nav-number">3.</span> <span class="nav-text">查看/etc/nsswitch.conf</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使认证通过后自动创建用户家目录"><span class="nav-number">4.</span> <span class="nav-text">使认证通过后自动创建用户家目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行"><span class="nav-number">5.</span> <span class="nav-text">执行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置可在本机通过passwd更改用户密码"><span class="nav-number">6.</span> <span class="nav-text">配置可在本机通过passwd更改用户密码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#脚本方式"><span class="nav-number">6.1.</span> <span class="nav-text">脚本方式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#脚本方式-1"><span class="nav-number"></span> <span class="nav-text">脚本方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码："><span class="nav-number"></span> <span class="nav-text">代码：</span></a></div>
             
 
           </div>
@@ -863,9 +823,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://liwg1995.github.io/2017/10/24/composer利用satis创建私人仓库/';
-          this.page.identifier = '2017/10/24/composer利用satis创建私人仓库/';
-          this.page.title = 'composer利用satis创建私人仓库';
+          this.page.url = 'https://liwg1995.github.io/2017/11/03/ubuntu下使用ldap做服务器用户认证/';
+          this.page.identifier = '2017/11/03/ubuntu下使用ldap做服务器用户认证/';
+          this.page.title = 'ubuntu下使用ldap做服务器用户认证';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://yu-du-yi-zhi-mao.disqus.com/embed.js';
