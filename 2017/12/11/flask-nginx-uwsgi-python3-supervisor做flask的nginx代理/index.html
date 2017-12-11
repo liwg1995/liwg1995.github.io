@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="certbot,ssl," />
+  <meta name="keywords" content="flask," />
 
 
 
@@ -71,18 +71,18 @@
 
 
 
-<meta name="description" content="安装12345$ sudo apt-get update$ sudo apt-get install software-properties-common$ sudo add-apt-repository ppa:certbot/certbot$ sudo apt-get update$ sudo apt-get install python-certbot-nginx 部署">
-<meta name="keywords" content="certbot,ssl">
+<meta name="description" content="ubuntu 16.04为例 安装nginx 1apt-get install nginx">
+<meta name="keywords" content="flask">
 <meta property="og:type" content="article">
-<meta property="og:title" content="certbot免费SSL证书申请部署">
-<meta property="og:url" content="https://liwg1995.github.io/2017/10/18/certbot免费SSL证书申请部署/index.html">
+<meta property="og:title" content="flask + nginx + uwsgi + python3 + supervisor做flask的nginx代理">
+<meta property="og:url" content="https://liwg1995.github.io/2017/12/11/flask-nginx-uwsgi-python3-supervisor做flask的nginx代理/index.html">
 <meta property="og:site_name" content="禹都一只猫">
-<meta property="og:description" content="安装12345$ sudo apt-get update$ sudo apt-get install software-properties-common$ sudo add-apt-repository ppa:certbot/certbot$ sudo apt-get update$ sudo apt-get install python-certbot-nginx 部署">
+<meta property="og:description" content="ubuntu 16.04为例 安装nginx 1apt-get install nginx">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-24T10:32:45.555Z">
+<meta property="og:updated_time" content="2017-12-11T07:41:04.604Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="certbot免费SSL证书申请部署">
-<meta name="twitter:description" content="安装12345$ sudo apt-get update$ sudo apt-get install software-properties-common$ sudo add-apt-repository ppa:certbot/certbot$ sudo apt-get update$ sudo apt-get install python-certbot-nginx 部署">
+<meta name="twitter:title" content="flask + nginx + uwsgi + python3 + supervisor做flask的nginx代理">
+<meta name="twitter:description" content="ubuntu 16.04为例 安装nginx 1apt-get install nginx">
 
 
 
@@ -112,13 +112,13 @@
 
 
 
-  <link rel="canonical" href="https://liwg1995.github.io/2017/10/18/certbot免费SSL证书申请部署/"/>
+  <link rel="canonical" href="https://liwg1995.github.io/2017/12/11/flask-nginx-uwsgi-python3-supervisor做flask的nginx代理/"/>
 
 
 
 
 
-  <title>certbot免费SSL证书申请部署 | 禹都一只猫</title>
+  <title>flask + nginx + uwsgi + python3 + supervisor做flask的nginx代理 | 禹都一只猫</title>
   
 
 
@@ -255,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liwg1995.github.io/2017/10/18/certbot免费SSL证书申请部署/">
+    <link itemprop="mainEntityOfPage" href="https://liwg1995.github.io/2017/12/11/flask-nginx-uwsgi-python3-supervisor做flask的nginx代理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="olei.me">
@@ -272,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">certbot免费SSL证书申请部署</h1>
+          <h1 class="post-title" itemprop="name headline">flask + nginx + uwsgi + python3 + supervisor做flask的nginx代理</h1>
         
 
         <div class="post-meta">
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-18T11:19:53+08:00">
-                2017-10-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-11T15:17:52+08:00">
+                2017-12-11
               </time>
             
 
@@ -295,28 +295,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -325,9 +303,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/10/18/certbot免费SSL证书申请部署/#comments" itemprop="discussionUrl">
+                <a href="/2017/12/11/flask-nginx-uwsgi-python3-supervisor做flask的nginx代理/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/18/certbot免费SSL证书申请部署/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/12/11/flask-nginx-uwsgi-python3-supervisor做flask的nginx代理/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -355,18 +333,74 @@
       
 
       
-        <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get update</div><div class="line">$ sudo apt-get install software-properties-common</div><div class="line">$ sudo add-apt-repository ppa:certbot/certbot</div><div class="line">$ sudo apt-get update</div><div class="line">$ sudo apt-get install python-certbot-nginx</div></pre></td></tr></table></figure>
-<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ certbot  certonly  --cert-name  xxxx  -d  xxxx</div></pre></td></tr></table></figure>
+        <blockquote>
+<p>ubuntu 16.04为例</p>
+<h3 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装<code>nginx</code></h3></blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install nginx</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="安装python虚拟环境"><a href="#安装python虚拟环境" class="headerlink" title="安装python虚拟环境"></a>安装<code>python</code>虚拟环境</h3><ul>
+<li>安装<code>virtualenvwrapper</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install virtualenvwrapper</div></pre></td></tr></table></figure>
+<ul>
+<li>在根目录下的<code>.zshrc</code>或者<code>.bashrc</code>添加：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export WORKON_HOME=$HOME/.virtualenvs</div><div class="line">source /usr/local/bin/virtualenvwrapper.sh</div></pre></td></tr></table></figure>
+<ul>
+<li>之后运行：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source .zhsrc</div></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source .bashrc</div></pre></td></tr></table></figure>
+<h3 id="配置虚拟环境"><a href="#配置虚拟环境" class="headerlink" title="配置虚拟环境"></a>配置虚拟环境</h3><ul>
+<li>创建<code>python3</code>的虚拟环境：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdirvirtualenv /usr/bin/python3</div></pre></td></tr></table></figure>
+<ul>
+<li>安装<code>flask</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install flask</div></pre></td></tr></table></figure>
+<ul>
+<li>安装<code>uwsgi</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install uwsgi</div></pre></td></tr></table></figure>
+<h3 id="安装supervisor"><a href="#安装supervisor" class="headerlink" title="安装supervisor"></a>安装<code>supervisor</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install supervisor</div></pre></td></tr></table></figure>
 <blockquote>
-<p>第一个<code>xxx</code>是证书名，第二个<code>xxx</code>是为了给哪个证书申请的域名</p>
-<h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><p>申请的域名一般都是90天的，所以我们需要更新</p>
+<p>我们在<code>root</code>的根目录下创建项目</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ certbot renew</div></pre></td></tr></table></figure>
-<hr>
+<h3 id="hello-world项目为例"><a href="#hello-world项目为例" class="headerlink" title="hello world项目为例"></a><code>hello world</code>项目为例</h3><ul>
+<li>创建<code>flask</code>文件夹，写入<code>hello.py</code>文件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir flask</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim hello.py</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">from flask import Flask</div><div class="line">app = Flask(__name__)</div><div class="line">@app.route(&quot;/&quot;)</div><div class="line">def hello():</div><div class="line">    return &quot;Hello World!&quot;</div><div class="line">if __name__ == &quot;__main__&quot;:</div><div class="line">    app.run(host=&apos;0.0.0.0&apos;, port=5009)</div></pre></td></tr></table></figure>
+<ul>
+<li>创建<code>hello.ini</code>文件，为了<code>uwsgi</code>配置</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim hello.ini</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[uwsgi]</div><div class="line">wsgi-file = hello.py</div><div class="line">chdir = /root/flask</div><div class="line">socket = 127.0.0.1:5009</div><div class="line">callable = application</div><div class="line">processes = 10</div><div class="line">threads = 2</div><div class="line">stats = 127.0.0.1:9191</div></pre></td></tr></table></figure>
 <blockquote>
-<p>参考：<a href="https://certbot.eff.org/#ubuntuxenial-nginx" target="_blank" rel="external">certbot for nginx</a><br>以上是基于ubuntu 16.04的linux系统，更多的请参考：<a href="https://certbot.eff.org" target="_blank" rel="external">certbot官网</a></p>
+<p>解析输入<code>uwsgi --ini hello.ini</code>就可以启动<code>uwsgi</code>了，但是退出就又没有了，我们用<code>supervisor</code></p>
+<ul>
+<li>在<code>/etc/supervisor/conf.d</code>下创建<code>hello.conf</code>文件：</li>
+</ul>
 </blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim hello.conf</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">[program:flask]</div><div class="line"># 启动命令入口</div><div class="line">command=/root/.virtualenvs/py3_flask/bin/uwsgi /root/flask/hello.ini</div><div class="line"></div><div class="line"># 命令程序所在目录</div><div class="line">directory=/root/flask</div><div class="line">#运行命令的用户名</div><div class="line">user=root</div><div class="line"></div><div class="line">autostart=true</div><div class="line">autorestart=true</div></pre></td></tr></table></figure>
+<ul>
+<li><code>/etc/nginx/conf.d</code>下创建<code>hello.conf</code>用于<code>nginx</code>的代理</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim hello.conf</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">    listen 5002;</div><div class="line">    server_name IP/domain_name;</div><div class="line">    charset utf-8;</div><div class="line">    client_max_body_size 75M;</div><div class="line">    location / &#123;</div><div class="line">    include uwsgi_params;</div><div class="line">    uwsgi_pass 127.0.0.1:5009;</div><div class="line">    uwsgi_param UWSGI_PYTHON /root/.virtualenvs/py3_flask;</div><div class="line">    uwsgi_param UWSGI_CHDIR /root/flask;</div><div class="line">    uwsgi_param UWSGI_SCRIPT hello:app;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="重启服务"><a href="#重启服务" class="headerlink" title="重启服务"></a>重启服务</h3><ul>
+<li>重启<code>nginx</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/init.d/nginx restart</div></pre></td></tr></table></figure>
+<ul>
+<li>重启<code>supervisor</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/init.d/supervisor restart</div></pre></td></tr></table></figure>
+<h3 id="访问"><a href="#访问" class="headerlink" title="访问:"></a>访问:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://ip:5002</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -413,7 +447,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/certbot-ssl/" rel="tag"># certbot,ssl</a>
+            <a href="/tags/flask/" rel="tag"># flask</a>
           
         </div>
       
@@ -424,37 +458,6 @@
       <div>
       
         
-<div class="my_post_copyright">
-  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
-  
-  <!-- JS库 sweetalert 可修改路径 -->
-  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
-  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
-  <p><span>本文标题:</span><a href="/2017/10/18/certbot免费SSL证书申请部署/">certbot免费SSL证书申请部署</a></p>
-  <p><span>文章作者:</span><a href="/" title="访问 olei.me 的个人博客">olei.me</a></p>
-  <p><span>发布时间:</span>2017年10月18日 - 11:10</p>
-  <p><span>最后更新:</span>2017年10月24日 - 18:10</p>
-  <p><span>原始链接:</span><a href="/2017/10/18/certbot免费SSL证书申请部署/" title="certbot免费SSL证书申请部署">https://liwg1995.github.io/2017/10/18/certbot免费SSL证书申请部署/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://liwg1995.github.io/2017/10/18/certbot免费SSL证书申请部署/"  aria-label="复制成功！"></i></span>
-  </p>
-  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
-</div>
-<script> 
-    var clipboard = new Clipboard('.fa-clipboard');
-	clipboard.on('success', $(function(){
-	  $(".fa-clipboard").click(function(){
-		swal({   
-		  title: "",   
-		  text: '复制成功',   
-		  html: false,
-		  timer: 500,   
-		  showConfirmButton: false
-	    });
-	  });
-    }));  
-</script>
-
 
       
       </div>
@@ -469,8 +472,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/16/迁移docker下安装的sentry/" rel="next" title="迁移docker下安装的sentry">
-                <i class="fa fa-chevron-left"></i> 迁移docker下安装的sentry
+              <a href="/2017/11/29/MySQL数据库slow-log的两种分析方法/" rel="next" title="MySQL数据库slow log的两种分析方法">
+                <i class="fa fa-chevron-left"></i> MySQL数据库slow log的两种分析方法
               </a>
             
           </div>
@@ -478,10 +481,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/18/ubuntu16-04安装openldap以及phpldapadmin/" rel="prev" title="ubuntu16.04安装openldap以及phpldapadmin">
-                ubuntu16.04安装openldap以及phpldapadmin <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -676,7 +675,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署"><span class="nav-number">2.</span> <span class="nav-text">部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新"><span class="nav-number">3.</span> <span class="nav-text">更新</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装nginx"><span class="nav-number">1.</span> <span class="nav-text">安装nginx</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装python虚拟环境"><span class="nav-number">2.</span> <span class="nav-text">安装python虚拟环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置虚拟环境"><span class="nav-number">3.</span> <span class="nav-text">配置虚拟环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装supervisor"><span class="nav-number">4.</span> <span class="nav-text">安装supervisor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hello-world项目为例"><span class="nav-number">5.</span> <span class="nav-text">hello world项目为例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重启服务"><span class="nav-number">6.</span> <span class="nav-text">重启服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#访问"><span class="nav-number">7.</span> <span class="nav-text">访问:</span></a></li></ol></div>
             
 
           </div>
@@ -825,9 +824,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://liwg1995.github.io/2017/10/18/certbot免费SSL证书申请部署/';
-          this.page.identifier = '2017/10/18/certbot免费SSL证书申请部署/';
-          this.page.title = 'certbot免费SSL证书申请部署';
+          this.page.url = 'https://liwg1995.github.io/2017/12/11/flask-nginx-uwsgi-python3-supervisor做flask的nginx代理/';
+          this.page.identifier = '2017/12/11/flask-nginx-uwsgi-python3-supervisor做flask的nginx代理/';
+          this.page.title = 'flask + nginx + uwsgi + python3 + supervisor做flask的nginx代理';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://yu-du-yi-zhi-mao.disqus.com/embed.js';
