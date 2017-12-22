@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liwg1995.github.io/"/>
-  <updated>2017-12-11T07:41:04.604Z</updated>
+  <updated>2017-12-22T06:43:54.498Z</updated>
   <id>https://liwg1995.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ubuntu与mac环境安装pyspider出现的问题以及解决方案</title>
+    <link href="https://liwg1995.github.io/2017/12/22/ubuntu%E4%B8%8Emac%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85pyspider%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E4%BB%A5%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    <id>https://liwg1995.github.io/2017/12/22/ubuntu与mac环境安装pyspider出现的问题以及解决方案/</id>
+    <published>2017-12-22T06:42:54.000Z</published>
+    <updated>2017-12-22T06:43:54.498Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="ubuntu下安装"><a href="#ubuntu下安装" class="headerlink" title="ubuntu下安装"></a><code>ubuntu</code>下安装</h3><ul><li>一般会出现<code>pycurl</code>安装不了的问题，执行:<a id="more"></a></li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ apt-get install python python-dev python-distribute python-pip \</div><div class="line">libcurl4-openssl-dev libxml2-dev libxslt1-dev python-lxml \ </div><div class="line">libssl-dev zlib1g-dev</div><div class="line"></div><div class="line">$ pip install pyspider</div></pre></td></tr></table></figure><h3 id="Mac系统"><a href="#Mac系统" class="headerlink" title="Mac系统"></a><code>Mac</code>系统</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pip install pyspider</div></pre></td></tr></table></figure><h4 id="遇到安装不了pycurl错误"><a href="#遇到安装不了pycurl错误" class="headerlink" title="遇到安装不了pycurl错误:"></a>遇到安装不了<code>pycurl</code>错误:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo env ARCHFLAGS=&quot;-arch x86_64&quot; LDFLAGS=&quot;-L/usr/local/opt/openssl/lib&quot; pip install pycurl</div></pre></td></tr></table></figure><ul><li>遇到类似<code>command &#39;clang&#39; failed with exit status 1</code>的错误:</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew install openssl</div></pre></td></tr></table></figure><ul><li>仍然有错会提醒你升级<code>openssl</code>：</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew upgrade openssl</div></pre></td></tr></table></figure><ul><li>写入环境变量:</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ echo &apos;export PATH=&quot;/usr/local/opt/openssl/bin:$PATH&quot;&apos; &gt;&gt; ~/.bash_profile</div></pre></td></tr></table></figure><p>然后再尝试安装最上面的那个命令  </p><ul><li>遇到这个错误:</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun</div></pre></td></tr></table></figure><p>尝试这个命令：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ xcode-select --install</div></pre></td></tr></table></figure><ul><li>再遇到这个错误：</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pycurl: libcurl link-time ssl backend (openssl) is different from compile-time ssl backend (none/other)</div></pre></td></tr></table></figure><p>执行下面的操作：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ pip uninstall pycurl</div><div class="line"></div><div class="line">$ export PYCURL_SSL_LIBRARY=openssl</div><div class="line"></div><div class="line">$ pip install pycurl</div><div class="line"></div><div class="line">$ pip install pyspider</div></pre></td></tr></table></figure><p>这就是<code>mac</code>可能遇到的错误了</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;ubuntu下安装&quot;&gt;&lt;a href=&quot;#ubuntu下安装&quot; class=&quot;headerlink&quot; title=&quot;ubuntu下安装&quot;&gt;&lt;/a&gt;&lt;code&gt;ubuntu&lt;/code&gt;下安装&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;一般会出现&lt;code&gt;pycurl&lt;/code&gt;安装不了的问题，执行:
+    
+    </summary>
+    
+    
+      <category term="pyspider" scheme="https://liwg1995.github.io/tags/pyspider/"/>
+    
+  </entry>
   
   <entry>
     <title>flask + nginx + uwsgi + python3 + supervisor做flask的nginx代理</title>
