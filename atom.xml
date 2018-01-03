@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liwg1995.github.io/"/>
-  <updated>2017-12-22T06:43:54.498Z</updated>
+  <updated>2018-01-03T11:03:12.887Z</updated>
   <id>https://liwg1995.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>clickhouse在mac以及ubuntu上的安装方式</title>
+    <link href="https://liwg1995.github.io/2018/01/03/clickhouse%E5%9C%A8mac%E4%BB%A5%E5%8F%8Aubuntu%E4%B8%8A%E7%9A%84%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F/"/>
+    <id>https://liwg1995.github.io/2018/01/03/clickhouse在mac以及ubuntu上的安装方式/</id>
+    <published>2018-01-03T11:01:34.000Z</published>
+    <updated>2018-01-03T11:03:12.887Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="mac下docker安装"><a href="#mac下docker安装" class="headerlink" title="mac下docker安装"></a><code>mac</code>下<code>docker</code>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ docker run -d --name some-clickhouse-server --ulimit nofile=262144:262144 yandex/clickhouse-server</div></pre></td></tr></table></figure><a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ docker run -it --rm --link some-clickhouse-server:clickhouse-server yandex/clickhouse-client --host clickhouse-server</div></pre></td></tr></table></figure><ul><li>第二条命令直接就访问了，下次访问也可以使用：</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ docker exec -it -u root  some-clickhouse-server /usr/bin/clickhouse --client -m</div></pre></td></tr></table></figure><h2 id="ubuntu安装"><a href="#ubuntu安装" class="headerlink" title="ubuntu安装"></a><code>ubuntu</code>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv E0C56BD4    # optional</div><div class="line"></div><div class="line">$ sudo apt-add-repository &quot;deb http://repo.yandex.ru/clickhouse/trusty stable main&quot;</div><div class="line">sudo apt-get update</div><div class="line"></div><div class="line">$ sudo apt-get install clickhouse-server-common clickhouse-client -y</div><div class="line"></div><div class="line">$ sudo service clickhouse-server start</div><div class="line">$ clickhouse-client</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;mac下docker安装&quot;&gt;&lt;a href=&quot;#mac下docker安装&quot; class=&quot;headerlink&quot; title=&quot;mac下docker安装&quot;&gt;&lt;/a&gt;&lt;code&gt;mac&lt;/code&gt;下&lt;code&gt;docker&lt;/code&gt;安装&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ docker run -d --name some-clickhouse-server --ulimit nofile=262144:262144 yandex/clickhouse-server&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="clickhouse" scheme="https://liwg1995.github.io/tags/clickhouse/"/>
+    
+  </entry>
   
   <entry>
     <title>ubuntu与mac环境安装pyspider出现的问题以及解决方案</title>
