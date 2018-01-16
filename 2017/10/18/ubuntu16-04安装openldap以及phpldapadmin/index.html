@@ -75,7 +75,7 @@
 <meta name="keywords" content="ldap,phpldapadmin">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ubuntu16.04安装openldap以及phpldapadmin">
-<meta property="og:url" content="https://liwg1995.github.io/2017/10/18/ubuntu16-04安装openldap以及phpldapadmin/index.html">
+<meta property="og:url" content="http://blog.olei.me/2017/10/18/ubuntu16-04安装openldap以及phpldapadmin/index.html">
 <meta property="og:site_name" content="禹都一只猫">
 <meta property="og:description" content="openldap安装openldap12$ sudo apt-get update$ sudo apt-get install slapd ldap-utils">
 <meta property="og:locale" content="zh-Hans">
@@ -114,7 +114,7 @@
 
 
 
-  <link rel="canonical" href="https://liwg1995.github.io/2017/10/18/ubuntu16-04安装openldap以及phpldapadmin/"/>
+  <link rel="canonical" href="http://blog.olei.me/2017/10/18/ubuntu16-04安装openldap以及phpldapadmin/"/>
 
 
 
@@ -258,7 +258,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liwg1995.github.io/2017/10/18/ubuntu16-04安装openldap以及phpldapadmin/">
+    <link itemprop="mainEntityOfPage" href="http://blog.olei.me/2017/10/18/ubuntu16-04安装openldap以及phpldapadmin/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="olei.me">
@@ -413,7 +413,7 @@
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">	listen 443 ssl http2;	</div><div class="line">        server_name i1995.cn;</div><div class="line">       # listen 80;</div><div class="line"></div><div class="line"># document root</div><div class="line">        root /usr/share/nginx/www;</div><div class="line">        index index.php index.html index.htm;</div><div class="line">	</div><div class="line">	ssl on;</div><div class="line">        ssl_certificate /etc/letsencrypt/live/i1995.cn/fullchain.pem;</div><div class="line">        ssl_certificate_key /etc/letsencrypt/live/i1995.cn/privkey.pem;</div><div class="line">        ssl_ciphers &apos;ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA:ECDHE-RSA-AES128-SHA:ECDHE-RSA-DES-CBC3-SHA:AES256-GCM-SHA384:AES128-GCM-SHA256:AES256-SHA256:AES128-SHA256:AES256-SHA:AES128-SHA:DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!MD5:!PSK:!RC4&apos;;</div><div class="line">        ssl_protocols  TLSv1 TLSv1.1 TLSv1.2;</div><div class="line">        ssl_prefer_server_ciphers on;</div><div class="line">        ssl_session_cache  builtin:1000  shared:SSL:10m;</div><div class="line">        ssl_session_timeout  5m;</div><div class="line"># application: phpldapadmin</div><div class="line">       location /phpldapadmin &#123;</div><div class="line">       alias /usr/share/phpldapadmin/htdocs;</div><div class="line">       index index.php index.html index.htm;</div><div class="line">  &#125;</div><div class="line">       location ~ ^/phpldapadmin/.*\.php$ &#123;</div><div class="line">       root /usr/share;</div><div class="line">       if ($request_filename !~* htdocs) &#123;</div><div class="line">            rewrite ^/phpldapadmin(/.*)?$ /phpldapadmin/htdocs$1;</div><div class="line">     &#125;</div><div class="line">       fastcgi_pass unix:/run/php/php7.0-fpm.sock;</div><div class="line">       fastcgi_index index.php;</div><div class="line">       fastcgi_param SCRIPT_FILENAME $request_filename;</div><div class="line">       include fastcgi_params;</div><div class="line"> &#125;</div><div class="line"></div><div class="line"># logging</div><div class="line">    error_log /var/log/nginx/phpldapadmin.ssl.error.log;</div><div class="line">    access_log /var/log/nginx/phpldapadmin.ssl.access.log;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <blockquote>
-<p>https的证书申请方式请查看：<a href="http://blog.olei.me/2017/10/18/certbot%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6%E7%94%B3%E8%AF%B7%E9%83%A8%E7%BD%B2/#more" target="_blank" rel="external">ubuntu 16.04－nginx－ssl</a><br>之后访问<a href="https://domain/phpldapadmin" target="_blank" rel="external">https://domain/phpldapadmin</a><br>比如：我的<a href="https://i1995.cn/phpldapadmin" target="_blank" rel="external">https://i1995.cn/phpldapadmin</a>  </p>
+<p>https的证书申请方式请查看：<a href="http://blog.olei.me/2017/10/18/certbot%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6%E7%94%B3%E8%AF%B7%E9%83%A8%E7%BD%B2/#more">ubuntu 16.04－nginx－ssl</a><br>之后访问<a href="https://domain/phpldapadmin" target="_blank" rel="external">https://domain/phpldapadmin</a><br>比如：我的<a href="https://i1995.cn/phpldapadmin" target="_blank" rel="external">https://i1995.cn/phpldapadmin</a>  </p>
 <h2 id=""><a href="#" class="headerlink" title="  "></a><img src="https://images.lwg1995.cn/phpldapadmin.png" alt="">  </h2></blockquote>
 
       
@@ -485,8 +485,8 @@
   <p><span>文章作者:</span><a href="/" title="访问 olei.me 的个人博客">olei.me</a></p>
   <p><span>发布时间:</span>2017年10月18日 - 17:10</p>
   <p><span>最后更新:</span>2017年10月24日 - 18:10</p>
-  <p><span>原始链接:</span><a href="/2017/10/18/ubuntu16-04安装openldap以及phpldapadmin/" title="ubuntu16.04安装openldap以及phpldapadmin">https://liwg1995.github.io/2017/10/18/ubuntu16-04安装openldap以及phpldapadmin/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://liwg1995.github.io/2017/10/18/ubuntu16-04安装openldap以及phpldapadmin/"  aria-label="复制成功！"></i></span>
+  <p><span>原始链接:</span><a href="/2017/10/18/ubuntu16-04安装openldap以及phpldapadmin/" title="ubuntu16.04安装openldap以及phpldapadmin">http://blog.olei.me/2017/10/18/ubuntu16-04安装openldap以及phpldapadmin/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://blog.olei.me/2017/10/18/ubuntu16-04安装openldap以及phpldapadmin/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -549,6 +549,32 @@
 
 
     <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
       
     </div>
   </div>
@@ -880,7 +906,7 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://liwg1995.github.io/2017/10/18/ubuntu16-04安装openldap以及phpldapadmin/';
+          this.page.url = 'http://blog.olei.me/2017/10/18/ubuntu16-04安装openldap以及phpldapadmin/';
           this.page.identifier = '2017/10/18/ubuntu16-04安装openldap以及phpldapadmin/';
           this.page.title = 'ubuntu16.04安装openldap以及phpldapadmin';
         };
