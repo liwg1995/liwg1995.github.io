@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.olei.me/"/>
-  <updated>2018-01-18T03:07:31.409Z</updated>
+  <updated>2018-01-20T09:35:40.579Z</updated>
   <id>http://blog.olei.me/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ubuntu16.04国内apt源以及官方源</title>
+    <link href="http://blog.olei.me/2018/01/20/ubuntu16-04%E5%9B%BD%E5%86%85apt%E6%BA%90%E4%BB%A5%E5%8F%8A%E5%AE%98%E6%96%B9%E6%BA%90/"/>
+    <id>http://blog.olei.me/2018/01/20/ubuntu16-04国内apt源以及官方源/</id>
+    <published>2018-01-20T09:34:37.000Z</published>
+    <updated>2018-01-20T09:35:40.579Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="腾讯云源"><a href="#腾讯云源" class="headerlink" title="腾讯云源"></a>腾讯云源</h3><a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">deb http://mirrors.tencentyun.com/ubuntu/ xenial main restricted universe multiverse</div><div class="line">deb http://mirrors.tencentyun.com/ubuntu/ xenial-security main restricted universe multiverse</div><div class="line">deb http://mirrors.tencentyun.com/ubuntu/ xenial-updates main restricted universe multiverse</div><div class="line">#deb http://mirrors.tencentyun.com/ubuntu/ xenial-proposed main restricted universe multiverse</div><div class="line">#deb http://mirrors.tencentyun.com/ubuntu/ xenial-backports main restricted universe multiverse</div><div class="line">deb-src http://mirrors.tencentyun.com/ubuntu/ xenial main restricted universe multiverse</div><div class="line">deb-src http://mirrors.tencentyun.com/ubuntu/ xenial-security main restricted universe multiverse</div><div class="line">deb-src http://mirrors.tencentyun.com/ubuntu/ xenial-updates main restricted universe multiverse</div><div class="line">#deb-src http://mirrors.tencentyun.com/ubuntu/ xenial-proposed main restricted universe multiverse</div><div class="line">#deb-src http://mirrors.tencentyun.com/ubuntu/ xenial-backports main restricted universe multiverse</div></pre></td></tr></table></figure><h3 id="京东云源"><a href="#京东云源" class="headerlink" title="京东云源"></a>京东云源</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">deb http://mirrors.jcloudcs.com/ubuntu/ xenial main restricted</div><div class="line">deb http://mirrors.jcloudcs.com/ubuntu/ xenial-updates main restricted</div><div class="line">deb http://mirrors.jcloudcs.com/ubuntu/ xenial universe</div><div class="line">deb http://mirrors.jcloudcs.com/ubuntu/ xenial-updates universe</div><div class="line">deb http://mirrors.jcloudcs.com/ubuntu/ xenial multiverse</div><div class="line">deb http://mirrors.jcloudcs.com/ubuntu/ xenial-updates multiverse</div><div class="line">deb http://mirrors.jcloudcs.com/ubuntu/ xenial-backports main restricted universe multiverse</div><div class="line">deb http://mirrors.jcloudcs.com/ubuntu/ xenial-security main restricted</div><div class="line">deb http://mirrors.jcloudcs.com/ubuntu/ xenial-security universe</div><div class="line">deb http://mirrors.jcloudcs.com/ubuntu/ xenial-security multiverse</div><div class="line"># deb-src [arch=amd64] https://mirrors.aliyun.com/docker-ce/linux/ubuntu xenial stable</div><div class="line"># deb-src [arch=amd64] https://mirrors.aliyun.com/docker-ce/linux/ubuntu xenial stable</div></pre></td></tr></table></figure><h3 id="阿里云源"><a href="#阿里云源" class="headerlink" title="阿里云源"></a>阿里云源</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">deb-src http://archive.ubuntu.com/ubuntu xenial main restricted #Added by software-properties</div><div class="line">deb http://mirrors.aliyun.com/ubuntu/ xenial main restricted</div><div class="line">deb-src http://mirrors.aliyun.com/ubuntu/ xenial main restricted multiverse universe #Added by software-properties</div><div class="line">deb http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted</div><div class="line">deb-src http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted multiverse universe #Added by software-properties</div><div class="line">deb http://mirrors.aliyun.com/ubuntu/ xenial universe</div><div class="line">deb http://mirrors.aliyun.com/ubuntu/ xenial-updates universe</div><div class="line">deb http://mirrors.aliyun.com/ubuntu/ xenial multiverse</div><div class="line">deb http://mirrors.aliyun.com/ubuntu/ xenial-updates multiverse</div><div class="line">deb http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse</div><div class="line">deb-src http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse #Added by software-properties</div><div class="line">deb http://archive.canonical.com/ubuntu xenial partner</div><div class="line">deb-src http://archive.canonical.com/ubuntu xenial partner</div><div class="line">deb http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted</div><div class="line">deb-src http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted multiverse universe #Added by software-properties</div><div class="line">deb http://mirrors.aliyun.com/ubuntu/ xenial-security universe</div><div class="line">deb http://mirrors.aliyun.com/ubuntu/ xenial-security multiverse</div></pre></td></tr></table></figure><h3 id="官方源（国内不建议使用）"><a href="#官方源（国内不建议使用）" class="headerlink" title="官方源（国内不建议使用）"></a>官方源（国内不建议使用）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">#deb cdrom:[Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719)]/ xenial main restricted</div><div class="line"></div><div class="line"># See http://help.ubuntu.com/community/UpgradeNotes for how to upgrade to</div><div class="line"># newer versions of the distribution.</div><div class="line">deb http://cn.archive.ubuntu.com/ubuntu/ xenial main restricted</div><div class="line"># deb-src http://cn.archive.ubuntu.com/ubuntu/ xenial main restricted</div><div class="line"></div><div class="line">## Major bug fix updates produced after the final release of the</div><div class="line">## distribution.</div><div class="line">deb http://cn.archive.ubuntu.com/ubuntu/ xenial-updates main restricted</div><div class="line"># deb-src http://cn.archive.ubuntu.com/ubuntu/ xenial-updates main restricted</div><div class="line"></div><div class="line">## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu</div><div class="line">## team, and may not be under a free licence. Please satisfy yourself as to</div><div class="line">## your rights to use the software. Also, please note that software in</div><div class="line">## universe WILL NOT receive any review or updates from the Ubuntu security</div><div class="line">## team.</div><div class="line">deb http://cn.archive.ubuntu.com/ubuntu/ xenial universe</div><div class="line"># deb-src http://cn.archive.ubuntu.com/ubuntu/ xenial universe</div><div class="line">deb http://cn.archive.ubuntu.com/ubuntu/ xenial-updates universe</div><div class="line"># deb-src http://cn.archive.ubuntu.com/ubuntu/ xenial-updates universe</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;腾讯云源&quot;&gt;&lt;a href=&quot;#腾讯云源&quot; class=&quot;headerlink&quot; title=&quot;腾讯云源&quot;&gt;&lt;/a&gt;腾讯云源&lt;/h3&gt;
+    
+    </summary>
+    
+    
+      <category term="ubuntu" scheme="http://blog.olei.me/tags/ubuntu/"/>
+    
+  </entry>
   
   <entry>
     <title>zsh以及oh my zsh搭配终端主题</title>
@@ -480,37 +500,6 @@
     
     
       <category term="docker,sentry" scheme="http://blog.olei.me/tags/docker-sentry/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>初次安装hexo注意的事项</title>
-    <link href="http://blog.olei.me/2017/09/30/%E5%88%9D%E6%AC%A1%E5%AE%89%E8%A3%85hexo%E6%B3%A8%E6%84%8F%E7%9A%84%E4%BA%8B%E9%A1%B9/"/>
-    <id>http://blog.olei.me/2017/09/30/初次安装hexo注意的事项/</id>
-    <published>2017-09-30T13:39:52.000Z</published>
-    <updated>2017-10-24T10:35:05.499Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="前期需要安装的组件"><a href="#前期需要安装的组件" class="headerlink" title="前期需要安装的组件"></a>前期需要安装的组件</h3><ul><li>nodejs  <ul><li>下载<a href="https://nodejs.org" target="_blank" rel="external">nodejs</a><ul><li>windows:<a href="https://nodejs.org/dist/v6.11.3/node-v6.11.3-x64.msi" target="_blank" rel="external">windows</a></li><li>linux（<code>ubuntu</code>为例）</li></ul></li></ul></li></ul><a id="more"></a>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ sudo add-apt-repository ppa:chris-lea/node.js</div><div class="line">$ sudo apt-get update</div><div class="line">$ sudo apt-get install nodejs</div></pre></td></tr></table></figure><ul><li>或者采用<code>nvm</code>安装：<br><code>$ wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh</code><br><code>$ nvm install 4</code>  </li></ul><blockquote><p>主要是要用到npm<br>国内的话，npm install会超级慢，天朝墙很高，你有能耐就翻过去咯~</p><ul><li>git<br>既然是要跟github打交道，那么git组件是必不可少的了</li></ul></blockquote><h3 id="翻墙问题"><a href="#翻墙问题" class="headerlink" title="翻墙问题"></a>翻墙问题</h3><h4 id="我要是没有那个能耐怎么办呢？"><a href="#我要是没有那个能耐怎么办呢？" class="headerlink" title="我要是没有那个能耐怎么办呢？"></a>我要是没有那个能耐怎么办呢？</h4><ul><li>国内有很好的镜像源，比如清华源:<a href="https://mirrors.tuna.tsinghua.edu.cn/" target="_blank" rel="external">清华源</a>等等  <h4 id="我们用淘宝源，来安装一个国内比较快的命令cnpm来代替npm"><a href="#我们用淘宝源，来安装一个国内比较快的命令cnpm来代替npm" class="headerlink" title="我们用淘宝源，来安装一个国内比较快的命令cnpm来代替npm"></a>我们用淘宝源，来安装一个国内比较快的命令<code>cnpm</code>来代替<code>npm</code></h4><code>$ npm install -g cnpm --registry=http://registry.npm.taobao.org</code>  <blockquote><p>因为我们安装好npm之后，之后要安装很多npm的组件，都要用到<code>npm install</code>，会超级慢，所以我们用<code>cnpm</code>来代替<code>npm</code></p></blockquote></li></ul><h3 id="选择镜像"><a href="#选择镜像" class="headerlink" title="选择镜像"></a>选择镜像</h3><h4 id="我们安装好hexo的时候，要运行hexo的一些命令，会发现特喵还是这么慢，怎么破？"><a href="#我们安装好hexo的时候，要运行hexo的一些命令，会发现特喵还是这么慢，怎么破？" class="headerlink" title="我们安装好hexo的时候，要运行hexo的一些命令，会发现特喵还是这么慢，怎么破？"></a>我们安装好<code>hexo</code>的时候，要运行<code>hexo</code>的一些命令，会发现特喵还是这么慢，怎么破？</h4><ul><li>我们安装<code>nrm</code>来选择镜像<br><code>$ cnpm install -g nrm --save</code>  </li><li>选择镜像<br><code>$ nrm use taobao</code>  <blockquote><p>这样我们就选择好了国内镜像  </p></blockquote></li></ul><h3 id="咋个安装hexo啊？"><a href="#咋个安装hexo啊？" class="headerlink" title="咋个安装hexo啊？"></a>咋个安装<code>hexo</code>啊？</h3><ul><li><code>cnpm</code>安装好了，我们就用<br><code>$ cnpm install -g hexo-cli</code><br><code>$ cnpm install -g hexo</code><h3 id="github上注意的东西"><a href="#github上注意的东西" class="headerlink" title="github上注意的东西"></a><code>github</code>上注意的东西</h3></li></ul><ol><li><code>github</code>的<code>repo</code>的名称必须是<code>用户名.github.io</code><ul><li>比如：我的<code>github</code>用户名为<code>keykeyorange</code>,那么我的用户名就为：  </li><li><code>keykeyorange.github.io</code></li></ul></li><li>记得在<code>github</code>上面添加本地电脑的<code>.ssh</code>目录的<code>id_rsa.pub</code><blockquote><p>具体怎么生成，请百度：<a href="https://www.baidu.com" target="_blank" rel="external">baidu</a></p></blockquote></li></ol><h3 id="注意两个命令"><a href="#注意两个命令" class="headerlink" title="注意两个命令"></a>注意两个命令</h3><ol><li><code>hexo g</code><ul><li>第一次或许会提醒缺少组件，自己通过<code>cnpm</code>安装就对了</li><li>这个命令相当于<code>git</code>命令中的<code>git commit -a -m xxxxx</code></li></ul></li><li><code>hexo d</code><ul><li>这个命令相当于<code>git</code>命令中的<code>git push</code></li></ul></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;前期需要安装的组件&quot;&gt;&lt;a href=&quot;#前期需要安装的组件&quot; class=&quot;headerlink&quot; title=&quot;前期需要安装的组件&quot;&gt;&lt;/a&gt;前期需要安装的组件&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;nodejs  &lt;ul&gt;
-&lt;li&gt;下载&lt;a href=&quot;https://nodejs.org&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;nodejs&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;windows:&lt;a href=&quot;https://nodejs.org/dist/v6.11.3/node-v6.11.3-x64.msi&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;windows&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;linux（&lt;code&gt;ubuntu&lt;/code&gt;为例）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="建站" scheme="http://blog.olei.me/categories/%E5%BB%BA%E7%AB%99/"/>
-    
-    
-      <category term="建站" scheme="http://blog.olei.me/tags/%E5%BB%BA%E7%AB%99/"/>
     
   </entry>
   
