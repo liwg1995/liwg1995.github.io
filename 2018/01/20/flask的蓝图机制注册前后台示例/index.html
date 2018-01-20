@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="gitlab," />
+  <meta name="keywords" content="flask," />
 
 
 
@@ -71,18 +71,20 @@
 
 
 
-<meta name="description" content="安装 配置国内镜像源 由于国内镜像，博主我只找到清华大学的镜像中有gitlab-ce，所以我们就配置好清华大学的镜像      添加GitLab 的 GPG 公钥:  1$ curl https://packages.gitlab.com/gpg.key 2&amp;gt; /dev/null | sudo apt-key add - &amp;amp;&amp;gt;/dev/null">
-<meta name="keywords" content="gitlab">
+<meta name="description" content="前台为home目录，后台为admin目录    蓝图Blueprint">
+<meta name="keywords" content="flask">
 <meta property="og:type" content="article">
-<meta property="og:title" content="gitlab的安装，更新，备份恢复">
-<meta property="og:url" content="http://blog.olei.me/2017/10/20/gitlab的安装，更新，备份恢复/index.html">
+<meta property="og:title" content="flask的蓝图机制注册前后台示例">
+<meta property="og:url" content="http://blog.olei.me/2018/01/20/flask的蓝图机制注册前后台示例/index.html">
 <meta property="og:site_name" content="禹都一只猫">
-<meta property="og:description" content="安装 配置国内镜像源 由于国内镜像，博主我只找到清华大学的镜像中有gitlab-ce，所以我们就配置好清华大学的镜像      添加GitLab 的 GPG 公钥:  1$ curl https://packages.gitlab.com/gpg.key 2&amp;gt; /dev/null | sudo apt-key add - &amp;amp;&amp;gt;/dev/null">
+<meta property="og:description" content="前台为home目录，后台为admin目录    蓝图Blueprint">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-24T10:33:52.657Z">
+<meta property="og:image" content="https://resources.olei.me/tree.png">
+<meta property="og:updated_time" content="2018-01-20T10:36:31.938Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="gitlab的安装，更新，备份恢复">
-<meta name="twitter:description" content="安装 配置国内镜像源 由于国内镜像，博主我只找到清华大学的镜像中有gitlab-ce，所以我们就配置好清华大学的镜像      添加GitLab 的 GPG 公钥:  1$ curl https://packages.gitlab.com/gpg.key 2&amp;gt; /dev/null | sudo apt-key add - &amp;amp;&amp;gt;/dev/null">
+<meta name="twitter:title" content="flask的蓝图机制注册前后台示例">
+<meta name="twitter:description" content="前台为home目录，后台为admin目录    蓝图Blueprint">
+<meta name="twitter:image" content="https://resources.olei.me/tree.png">
 
 
 
@@ -112,13 +114,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.olei.me/2017/10/20/gitlab的安装，更新，备份恢复/"/>
+  <link rel="canonical" href="http://blog.olei.me/2018/01/20/flask的蓝图机制注册前后台示例/"/>
 
 
 
 
 
-  <title>gitlab的安装，更新，备份恢复 | 禹都一只猫</title>
+  <title>flask的蓝图机制注册前后台示例 | 禹都一只猫</title>
   
 
 
@@ -256,7 +258,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.olei.me/2017/10/20/gitlab的安装，更新，备份恢复/">
+    <link itemprop="mainEntityOfPage" href="http://blog.olei.me/2018/01/20/flask的蓝图机制注册前后台示例/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="olei.me">
@@ -273,7 +275,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">gitlab的安装，更新，备份恢复</h1>
+          <h1 class="post-title" itemprop="name headline">flask的蓝图机制注册前后台示例</h1>
         
 
         <div class="post-meta">
@@ -285,8 +287,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-20T17:39:11+08:00">
-                2017-10-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-20T18:35:37+08:00">
+                2018-01-20
               </time>
             
 
@@ -295,28 +297,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -327,8 +307,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/2017/10/20/gitlab的安装，更新，备份恢复/#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2017/10/20/gitlab的安装，更新，备份恢复/" itemprop="commentsCount"></span>
+                <a href="/2018/01/20/flask的蓝图机制注册前后台示例/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/01/20/flask的蓝图机制注册前后台示例/" itemprop="commentsCount"></span>
                 </a>
               
             
@@ -356,64 +336,72 @@
       
 
       
-        <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul>
-<li>配置国内镜像源<blockquote>
-<p>由于国内镜像，博主我只找到清华大学的镜像中有<code>gitlab-ce</code>，所以我们就配置好清华大学的镜像 </p>
+        <blockquote>
+<p>前台为<code>home</code>目录，后台为<code>admin</code>目录  </p>
 </blockquote>
-</li>
-</ul>
-<ol>
-<li>添加GitLab 的 GPG 公钥:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ curl https://packages.gitlab.com/gpg.key 2&gt; /dev/null | sudo apt-key add - &amp;&gt;/dev/null</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<ol>
-<li>在<code>/etc/apt/sources.list.d/gitlab-ce.list</code>写入：  </li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">deb https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/ubuntu xenial main</div></pre></td></tr></table></figure>
+<h3 id="蓝图Blueprint"><a href="#蓝图Blueprint" class="headerlink" title="蓝图Blueprint"></a>蓝图<code>Blueprint</code></h3><a id="more"></a>
 <ul>
-<li>国外镜像添加的是:  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">deb https://packages.gitlab.com/gitlab/gitlab-ce/ubuntu/ xenial main</div></pre></td></tr></table></figure>
-</li>
+<li><code>app</code>项目目录结构：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">app</div><div class="line">├── __init__.py</div><div class="line">├── __init__.pyc</div><div class="line">├── admin</div><div class="line">│   ├── __init__.py</div><div class="line">│   ├── __init__.pyc</div><div class="line">│   ├── forms.py</div><div class="line">│   ├── views.py</div><div class="line">│   └── views.pyc</div><div class="line">├── home</div><div class="line">│   ├── __init__.py</div><div class="line">│   ├── __init__.pyc</div><div class="line">│   ├── forms.py</div><div class="line">│   ├── views.py</div><div class="line">│   └── views.pyc</div><div class="line">└── models.py</div></pre></td></tr></table></figure>
+<p><img src="https://resources.olei.me/tree.png" alt="tree">   </p>
+<blockquote>
+<p>蓝图需要引入<code>flask</code>中的<code>Blueprint</code>  </p>
+</blockquote>
+<ul>
+<li><code>home</code>目录下<code>__init__.py</code>引入蓝图:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">from flask import Blueprint</div></pre></td></tr></table></figure>
+<ul>
+<li>写入蓝图:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">home = Blueprint(&quot;home&quot;,__name__)</div></pre></td></tr></table></figure>
+<ul>
+<li>导入视图</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import app.home.views</div></pre></td></tr></table></figure>
+<p>完整代码:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"># -*- coding: utf-8 -*-</div><div class="line"># @Time    : 2018/1/6 15:00</div><div class="line"># @Author  : liwugang</div><div class="line"># @Email   : liwg@olei.me</div><div class="line"># @File    : __init__.py</div><div class="line"># @Software: PyCharm</div><div class="line">from flask import Blueprint</div><div class="line"></div><div class="line">home = Blueprint(&quot;home&quot;,__name__)</div><div class="line"></div><div class="line">import app.home.views</div></pre></td></tr></table></figure>
+<ul>
+<li><code>admin</code>与上面类似，<code>__init__.py</code>完整代码:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"># -*- coding: utf-8 -*-</div><div class="line"># @Time    : 2018/1/6 15:00</div><div class="line"># @Author  : liwugang</div><div class="line"># @Email   : liwg@olei.me</div><div class="line"># @File    : __init__.py</div><div class="line"># @Software: PyCharm</div><div class="line"></div><div class="line">from flask import Blueprint</div><div class="line"></div><div class="line">admin = Blueprint(&quot;admin&quot;,__name__)</div><div class="line"></div><div class="line">import app.admin.views</div></pre></td></tr></table></figure>
+<h4 id="app项目的-init-py书写"><a href="#app项目的-init-py书写" class="headerlink" title="app项目的__init__.py书写"></a><code>app</code>项目的<code>__init__.py</code>书写</h4><ul>
+<li>引入蓝图模块</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">from flask import Blueprint</div></pre></td></tr></table></figure>
+<ul>
+<li>引入<code>home</code>、<code>admin</code>的蓝图</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">from app.home import home as home_blueprint</div><div class="line">from app.admin import admin as admin_blueprint</div></pre></td></tr></table></figure>
+<ul>
+<li>注册蓝图，为前端<code>home</code>分配默认路由为<code>home</code>目录的<code>/</code>，后端<code>admin</code>分配默认路由为<code>/admin</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">app.register_blueprint(home_blueprint)</div><div class="line">app.register_blueprint(admin_blueprint, url_prefix=&quot;/admin&quot;)</div></pre></td></tr></table></figure>
+<p>完整代码:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"># -*- coding: utf-8 -*-</div><div class="line"># @Time    : 2018/1/6 14:59</div><div class="line"># @Author  : liwugang</div><div class="line"># @Email   : liwg@olei.me</div><div class="line"># @File    : __init__.py</div><div class="line"># @Software: PyCharm</div><div class="line"></div><div class="line">from flask import Flask</div><div class="line"></div><div class="line">app = Flask(__name__)</div><div class="line">app.debug = True</div><div class="line"></div><div class="line">from app.home import home as home_blueprint</div><div class="line">from app.admin import admin as admin_blueprint</div><div class="line"></div><div class="line">app.register_blueprint(home_blueprint)</div><div class="line">app.register_blueprint(admin_blueprint, url_prefix=&quot;/admin&quot;)</div></pre></td></tr></table></figure>
+<h4 id="定义两个的视图"><a href="#定义两个的视图" class="headerlink" title="定义两个的视图"></a>定义两个的视图</h4><ul>
+<li>以<code>admin</code>的<code>views.py</code>为例</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"># -*- coding: utf-8 -*-</div><div class="line"># @Time    : 2018/1/6 15:01</div><div class="line"># @Author  : liwugang</div><div class="line"># @Email   : liwg@olei.me</div><div class="line"># @File    : views.py</div><div class="line"># @Software: PyCharm</div><div class="line"></div><div class="line">from . import admin</div><div class="line"></div><div class="line"></div><div class="line">@admin.route(&quot;/&quot;)</div><div class="line">def index():</div><div class="line">    return &quot;&lt;h1 style:&apos;color:red&apos;&gt;this is admin!&lt;/h1&gt;&quot;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>注册蓝图的时候，我们给了<code>admin</code>默认路由为<code>/admin</code>，这里写路由的时候就不用再写<code>/admin</code>了  </p>
+</blockquote>
+<ul>
+<li><code>home</code>同上:  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"># -*- coding: utf-8 -*-</div><div class="line"># @Time    : 2018/1/6 15:01</div><div class="line"># @Author  : liwugang</div><div class="line"># @Email   : liwg@olei.me</div><div class="line"># @File    : views.py</div><div class="line"># @Software: PyCharm</div><div class="line"></div><div class="line">from . import home</div><div class="line"></div><div class="line"></div><div class="line">@home.route(&quot;/&quot;)</div><div class="line">def index():</div><div class="line">    return &quot;&lt;h1 style:&apos;color:green&apos;&gt;this is home!&lt;/h1&gt;&quot;</div></pre></td></tr></table></figure>
+<h4 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h4><ul>
+<li>入口函数为<code>manage.py</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"># -*- coding: utf-8 -*-</div><div class="line"># @Time    : 2018/1/6 14:58</div><div class="line"># @Author  : liwugang</div><div class="line"># @Email   : liwg@olei.me</div><div class="line"># @File    : manage.py</div><div class="line"># @Software: PyCharm</div><div class="line"># 入口函数</div><div class="line"></div><div class="line">from app import app</div><div class="line"></div><div class="line">if __name__ == &quot;__main__&quot;:</div><div class="line">    app.run()</div></pre></td></tr></table></figure>
+<ul>
+<li><code>python manage.py</code></li>
 </ul>
 <blockquote>
-<p>国外的镜像在国内的话，连接不是很稳定，有时候网速贼快，有时候又特么忒慢，建议使用国内源<code>(也不是很稳定)</code></p>
-<ol>
-<li>安装</li>
-</ol>
+<p>访问<code>http://127.0.0.1:5000</code>，界面会显示绿色字体的<code>this is home!</code>  </p>
+<p>访问<code>http://127.0.0.1:5000/admin</code>，界面会显示红色字体的<code>this is admin!</code></p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get update</div><div class="line">$ sudo apt-get install gitlab-ce</div></pre></td></tr></table></figure>
-<ol>
-<li>配置</li>
-</ol>
-<ul>
-<li>修改<code>/etc/gitlab/</code>目录中的<code>gitlab.rb</code>文件，配置域名，配置邮箱等等</li>
-<li>重新配置命令:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo gitlab-ctl reconfigure</div></pre></td></tr></table></figure>
-<ol>
-<li>运行</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo gitlab-ctl restart</div></pre></td></tr></table></figure>
-<h3 id="备份恢复"><a href="#备份恢复" class="headerlink" title="备份恢复"></a>备份恢复</h3><ol>
-<li>备份</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo gitlab-rake gitlab:backup:create</div></pre></td></tr></table></figure>
-<blockquote>
-<p>在<code>/var/opt/gitlab/backups</code>目录下会有类似如下格式的备份文件:<br><code>1466811825_gitlab_backup.tar</code></p>
-<ol>
-<li>恢复</li>
-</ol>
-<ul>
-<li>恢复<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># 停止相关数据连接服务</div><div class="line">$ sudo gitlab-ctl stop unicorn </div><div class="line">$ sudo gitlab-ctl stop sidekiq</div><div class="line"></div><div class="line">$ sudo gitlab-rake gitlab:backup:restore BACKUP=xxxx   # xxx为备份文件_gitlab_backup.tar前面的数字</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</blockquote>
-<ul>
-<li>启动</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo gitlab-ctl start</div></pre></td></tr></table></figure>
-<h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get update</div><div class="line">$ sudo apt-get install gitlab-ce</div><div class="line">$ sudo apt-get reconfigure</div></pre></td></tr></table></figure>
-<hr>
 
       
     </div>
@@ -465,7 +453,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://blog.olei.me/2017/10/20/gitlab的安装，更新，备份恢复/" title="gitlab的安装，更新，备份恢复">http://blog.olei.me/2017/10/20/gitlab的安装，更新，备份恢复/</a>
+    <a href="http://blog.olei.me/2018/01/20/flask的蓝图机制注册前后台示例/" title="flask的蓝图机制注册前后台示例">http://blog.olei.me/2018/01/20/flask的蓝图机制注册前后台示例/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -480,7 +468,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/gitlab/" rel="tag"><i class="fa fa-tag"></i> gitlab</a>
+            <a href="/tags/flask/" rel="tag"><i class="fa fa-tag"></i> flask</a>
           
         </div>
       
@@ -491,37 +479,6 @@
       <div>
       
         
-<div class="my_post_copyright">
-  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
-  
-  <!-- JS库 sweetalert 可修改路径 -->
-  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
-  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
-  <p><span>本文标题:</span><a href="/2017/10/20/gitlab的安装，更新，备份恢复/">gitlab的安装，更新，备份恢复</a></p>
-  <p><span>文章作者:</span><a href="/" title="访问 olei.me 的个人博客">olei.me</a></p>
-  <p><span>发布时间:</span>2017年10月20日 - 17:10</p>
-  <p><span>最后更新:</span>2017年10月24日 - 18:10</p>
-  <p><span>原始链接:</span><a href="/2017/10/20/gitlab的安装，更新，备份恢复/" title="gitlab的安装，更新，备份恢复">http://blog.olei.me/2017/10/20/gitlab的安装，更新，备份恢复/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://blog.olei.me/2017/10/20/gitlab的安装，更新，备份恢复/"  aria-label="复制成功！"></i></span>
-  </p>
-  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
-</div>
-<script> 
-    var clipboard = new Clipboard('.fa-clipboard');
-	clipboard.on('success', $(function(){
-	  $(".fa-clipboard").click(function(){
-		swal({   
-		  title: "",   
-		  text: '复制成功',   
-		  html: false,
-		  timer: 500,   
-		  showConfirmButton: false
-	    });
-	  });
-    }));  
-</script>
-
 
       
       </div>
@@ -536,8 +493,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/19/php-nginx-http-https的basic认证/" rel="next" title="php+nginx+http/https的Basic Authentication认证">
-                <i class="fa fa-chevron-left"></i> php+nginx+http/https的Basic Authentication认证
+              <a href="/2018/01/20/ubuntu16-04国内apt源以及官方源/" rel="next" title="ubuntu16.04国内apt源以及官方源">
+                <i class="fa fa-chevron-left"></i> ubuntu16.04国内apt源以及官方源
               </a>
             
           </div>
@@ -545,10 +502,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/24/composer利用satis创建私人仓库/" rel="prev" title="composer利用satis创建私人仓库">
-                composer利用satis创建私人仓库 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -770,7 +723,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#备份恢复"><span class="nav-number">2.</span> <span class="nav-text">备份恢复</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新"><span class="nav-number">3.</span> <span class="nav-text">更新</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#蓝图Blueprint"><span class="nav-number">1.</span> <span class="nav-text">蓝图Blueprint</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#app项目的-init-py书写"><span class="nav-number">1.1.</span> <span class="nav-text">app项目的__init__.py书写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#定义两个的视图"><span class="nav-number">1.2.</span> <span class="nav-text">定义两个的视图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运行"><span class="nav-number">1.3.</span> <span class="nav-text">运行</span></a></li></ol></li></ol></div>
             
 
           </div>
