@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="DNS服务器," />
+  <meta name="keywords" content="clickhouse," />
 
 
 
@@ -71,18 +71,18 @@
 
 
 
-<meta name="description" content="系统环境:Ubuntu 16.04.3 LTS内网IP : 192.168.1.110  安装12$ apt-get update$ apt-get install bind9">
-<meta name="keywords" content="DNS服务器">
+<meta name="description" content="安装需要的包1$ pip install clickhouse-sqlalchemy">
+<meta name="keywords" content="clickhouse">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu搭建DNS服务器">
-<meta property="og:url" content="http://blog.olei.me/2017/10/27/Ubuntu搭建DNS服务器/index.html">
+<meta property="og:title" content="使用sqlalchemy为clickhouse创建数据表">
+<meta property="og:url" content="http://blog.olei.me/2018/01/24/使用sqlalchemy为clickhouse创建数据表/index.html">
 <meta property="og:site_name" content="禹都一只猫">
-<meta property="og:description" content="系统环境:Ubuntu 16.04.3 LTS内网IP : 192.168.1.110  安装12$ apt-get update$ apt-get install bind9">
+<meta property="og:description" content="安装需要的包1$ pip install clickhouse-sqlalchemy">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-27T06:09:17.221Z">
+<meta property="og:updated_time" content="2018-01-24T10:49:43.775Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu搭建DNS服务器">
-<meta name="twitter:description" content="系统环境:Ubuntu 16.04.3 LTS内网IP : 192.168.1.110  安装12$ apt-get update$ apt-get install bind9">
+<meta name="twitter:title" content="使用sqlalchemy为clickhouse创建数据表">
+<meta name="twitter:description" content="安装需要的包1$ pip install clickhouse-sqlalchemy">
 
 
 
@@ -112,13 +112,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.olei.me/2017/10/27/Ubuntu搭建DNS服务器/"/>
+  <link rel="canonical" href="http://blog.olei.me/2018/01/24/使用sqlalchemy为clickhouse创建数据表/"/>
 
 
 
 
 
-  <title>Ubuntu搭建DNS服务器 | 禹都一只猫</title>
+  <title>使用sqlalchemy为clickhouse创建数据表 | 禹都一只猫</title>
   
 
 
@@ -256,7 +256,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.olei.me/2017/10/27/Ubuntu搭建DNS服务器/">
+    <link itemprop="mainEntityOfPage" href="http://blog.olei.me/2018/01/24/使用sqlalchemy为clickhouse创建数据表/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="olei.me">
@@ -273,7 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Ubuntu搭建DNS服务器</h1>
+          <h1 class="post-title" itemprop="name headline">使用sqlalchemy为clickhouse创建数据表</h1>
         
 
         <div class="post-meta">
@@ -285,8 +285,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-27T14:07:00+08:00">
-                2017-10-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-24T18:40:22+08:00">
+                2018-01-24
               </time>
             
 
@@ -295,28 +295,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -327,8 +305,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/2017/10/27/Ubuntu搭建DNS服务器/#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2017/10/27/Ubuntu搭建DNS服务器/" itemprop="commentsCount"></span>
+                <a href="/2018/01/24/使用sqlalchemy为clickhouse创建数据表/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/01/24/使用sqlalchemy为clickhouse创建数据表/" itemprop="commentsCount"></span>
                 </a>
               
             
@@ -356,56 +334,52 @@
       
 
       
-        <blockquote>
-<p>系统环境:<br>Ubuntu 16.04.3 LTS<br>内网IP : 192.168.1.110</p>
-</blockquote>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ apt-get update</div><div class="line">$ apt-get install bind9</div></pre></td></tr></table></figure>
+        <h3 id="安装需要的包"><a href="#安装需要的包" class="headerlink" title="安装需要的包"></a>安装需要的包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pip install clickhouse-sqlalchemy</div></pre></td></tr></table></figure>
 <a id="more"></a>
-<h3 id="配置缓存转发"><a href="#配置缓存转发" class="headerlink" title="配置缓存转发"></a>配置缓存转发</h3><ul>
-<li>打开打开<code>/etc/bind/named.conf.options</code>,修改后如下:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">acl goodclients &#123;</div><div class="line">        192.168.1.0/24;</div><div class="line">        localhost;</div><div class="line">        localnets;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">options &#123;</div><div class="line">        directory &quot;/var/cache/bind&quot;;</div><div class="line"></div><div class="line">        // If there is a firewall between you and nameservers you want</div><div class="line">        // to talk to, you may need to fix the firewall to allow multiple</div><div class="line">        // ports to talk.  See http://www.kb.cert.org/vuls/id/800113</div><div class="line"></div><div class="line">        // If your ISP provided one or more IP addresses for stable</div><div class="line">        // nameservers, you probably want to use them as forwarders.</div><div class="line">        // Uncomment the following block, and insert the addresses replacing</div><div class="line">        // the all-0&apos;s placeholder.</div><div class="line"></div><div class="line">        // forwarders &#123;</div><div class="line">        //      0.0.0.0;</div><div class="line">        // &#125;;</div><div class="line"></div><div class="line">        //========================================================================</div><div class="line">        // If BIND logs error messages about the root key being expired,</div><div class="line">        // you will need to update your keys.  See https://www.isc.org/bind-keys</div><div class="line">        //========================================================================</div><div class="line">        dnssec-validation auto;</div><div class="line"></div><div class="line">        auth-nxdomain no;    # conform to RFC1035</div><div class="line">        listen-on-v6 &#123; any; &#125;;</div><div class="line"></div><div class="line">        //added</div><div class="line">        listen-on &#123; 192.168.1.110;&#125;;</div><div class="line"></div><div class="line">        recursion yes ;</div><div class="line">        allow-query &#123; goodclients;&#125;;</div><div class="line">        allow-transfer &#123; none; &#125;; # disable zone transfers by default</div><div class="line"></div><div class="line">        forwarders &#123;</div><div class="line">                223.5.5.5; # alidns</div><div class="line">                223.6.6.6; # alidns</div><div class="line">        &#125;;</div><div class="line">        forward only ;</div><div class="line"></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h3 id="配置local文件"><a href="#配置local文件" class="headerlink" title="配置local文件"></a>配置local文件</h3><ul>
-<li><code>named.conf.local</code> 文件默认是空的。本文在配置文件中分别定义一条<code>正向解析</code>和一条<code>反向解析</code>。配置文件修改后类似如下:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//domain-&gt;ip</div><div class="line">zone &quot;local.com&quot; in &#123;</div><div class="line">        type master;</div><div class="line">        file &quot;/var/cache/bind/db.local.com&quot;;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">//ip-&gt;domain</div><div class="line">zone &quot;1.168.192.in-addr.arpa&quot; in &#123;</div><div class="line">        type master;</div><div class="line">        file &quot;/var/cache/bind/db.1.168.192&quot;;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h3 id="定义区域配置文件"><a href="#定义区域配置文件" class="headerlink" title="定义区域配置文件"></a>定义区域配置文件</h3><blockquote>
-<p>配置文件定义后类似如下，分别是正向和反向两个解析记录。按照自己需求修改相应的区域和区域解析记录，IP等信息。</p>
-<ul>
-<li>正向记录</li>
-</ul>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo vim /var/cache/bind/db.local.com</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">$TTL 604800</div><div class="line">@ IN SOA local.com. root.local.com. (</div><div class="line">2 ; Serial</div><div class="line">604800 ; Refresh</div><div class="line">86400 ; Retry</div><div class="line">2419200 ; Expire</div><div class="line">604000) ; Negative Cache TTL</div><div class="line">;</div><div class="line">; name servers</div><div class="line">@ IN NS ns.local.com.</div><div class="line">@ IN A 192.168.1.110</div><div class="line">;ns records</div><div class="line">ns IN A 192.168.1.110</div><div class="line">;host records</div><div class="line">www IN A 192.168.1.110</div><div class="line">api IN A 192.168.1.100</div></pre></td></tr></table></figure>
-<ul>
-<li>反向记录</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo vim /var/cache/bind/db.1.168.192</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$TTL 604800</div><div class="line">@ IN SOA local.com. root.local.com. (</div><div class="line">2 ; Serial Number</div><div class="line">604800 ; Refresh</div><div class="line">86400 ; Retry</div><div class="line">2419200 ; Expire</div><div class="line">86400 ); ; Minimum</div><div class="line"></div><div class="line">@ IN NS local.com.</div><div class="line"></div><div class="line">66 IN PTR www.local.com.</div><div class="line">66 IN PTR api.local.com.</div></pre></td></tr></table></figure>
+<h3 id="使用demo"><a href="#使用demo" class="headerlink" title="使用demo"></a>使用demo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"># -*- coding: utf-8 -*-</div><div class="line"></div><div class="line">from sqlalchemy import create_engine, Column, MetaData, literal</div><div class="line">from clickhouse_sqlalchemy  import Table, make_session, get_declarative_base, types, engines</div><div class="line"></div><div class="line">uri = &quot;clickhouse://default:Qbb4RJa4@localhost/dayday&quot;</div><div class="line"></div><div class="line">engine = create_engine(uri)</div><div class="line">session = make_session(engine)</div><div class="line">metadata = MetaData(bind=engine)</div><div class="line"></div><div class="line">Base = get_declarative_base(metadata=metadata)</div><div class="line"></div><div class="line">day  = Table(&apos;date&apos;,metadata,</div><div class="line">              Column(&apos;day&apos;,types.Date,primary_key=True),</div><div class="line">              Column(&apos;value&apos;,types.Int32,server_default=literal(1)),</div><div class="line">              engines.Memory()</div><div class="line">              )</div><div class="line"></div><div class="line"></div><div class="line">if __name__ == &quot;__main__&quot;:</div><div class="line">        day.create()</div></pre></td></tr></table></figure>
 <blockquote>
-<p>以上两个文件均写在<code>/var/cache/bind</code> 下</p>
-<h3 id="检查配置、重启"><a href="#检查配置、重启" class="headerlink" title="检查配置、重启"></a>检查配置、重启</h3><ul>
-<li>检查</li>
-</ul>
+<p>我设置了密码，自己没有设置，<code>@</code>与<code>//</code>前面几个不用写</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cd /var/cache/bind</div><div class="line">$ named-checkzone local.com /var/cache/bind/db.local.com</div></pre></td></tr></table></figure>
-<p>输出：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">zone local.com/IN: loaded serial 2</div><div class="line">OK</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ named-checkzone db.1.168.192 /var/cache/bind/db.1.168.192</div></pre></td></tr></table></figure>
-<p>输出：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">zone db.1.168.192/IN: loaded serial 2</div><div class="line">OK</div></pre></td></tr></table></figure>
-<blockquote>
-<p>分别检查了语法和区域配置文件，没有报错。重启bind服务。</p>
-</blockquote>
-<ul>
-<li>重启</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo service bind9 restart</div></pre></td></tr></table></figure>
-<blockquote>
-<p>到这里DNS服务器的配置就完成了</p>
-<h3 id="配置路由器首要DNS"><a href="#配置路由器首要DNS" class="headerlink" title="配置路由器首要DNS"></a>配置路由器首要DNS</h3><ul>
-<li>在路由器里设置<code>首要DNS</code> 为 <code>192.168.1.110</code> ，这样我们就可以在同一个内网下访问：<code>www.local.com</code> 就会指向到 <code>192.168.1.110</code>，访问：<code>api.local.com</code> 就会指向到 <code>192.168.1.100</code></li>
-</ul>
+<h3 id="使用一键运行创建大量数据库表"><a href="#使用一键运行创建大量数据库表" class="headerlink" title="使用一键运行创建大量数据库表"></a>使用一键运行创建大量数据库表</h3><pre><code># -*- coding: utf-8 -*-
+
+from sqlalchemy import create_engine, Column, MetaData, literal
+from clickhouse_sqlalchemy import make_session, get_declarative_base, types, engines
+from datetime import datetime
+
+uri = &quot;clickhouse://default:Qbb4RJa4@localhost/default&quot;
+
+engine = create_engine(uri)
+session = make_session(engine)
+metadata = MetaData(bind=engine)
+
+Base = get_declarative_base(metadata=metadata)
+
+
+class User(Base):
+    __tablename__ = &quot;user&quot;
+    id = Column(types.Int8, primary_key=True)
+    name = Column(types.String)
+    pwd = Column(types.String)
+    email = Column(types.String)
+    phone = Column(types.String)
+    info = Column(types.String)
+    face = Column(types.String)
+    addtime = Column(types.Date)
+    uuid = Column(types.String)
+
+    __table_args__ = (
+        engines.Memory(),
+    )
+
+    def __repr__(self):
+        return &quot;&lt;User %r&gt;&quot; % self.name
+
+
+if __name__ == &quot;__main__&quot;:
+   Base.metadata.create_all(engine)
+</code></pre><blockquote>
+<p>多个数据表可以写多个<code>class</code></p>
+<h2 id="访问数据库就可以看到新创建的数据库"><a href="#访问数据库就可以看到新创建的数据库" class="headerlink" title="访问数据库就可以看到新创建的数据库  "></a>访问数据库就可以看到新创建的数据库  </h2><p>遇见的问题是关联表之间的问题，关联表的时候，显示数据表引擎有问题，还不知怎么解决，探索中… … </p>
 </blockquote>
 
       
@@ -458,7 +432,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://blog.olei.me/2017/10/27/Ubuntu搭建DNS服务器/" title="Ubuntu搭建DNS服务器">http://blog.olei.me/2017/10/27/Ubuntu搭建DNS服务器/</a>
+    <a href="http://blog.olei.me/2018/01/24/使用sqlalchemy为clickhouse创建数据表/" title="使用sqlalchemy为clickhouse创建数据表">http://blog.olei.me/2018/01/24/使用sqlalchemy为clickhouse创建数据表/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -473,7 +447,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/DNS服务器/" rel="tag"><i class="fa fa-tag"></i> DNS服务器</a>
+            <a href="/tags/clickhouse/" rel="tag"><i class="fa fa-tag"></i> clickhouse</a>
           
         </div>
       
@@ -484,37 +458,6 @@
       <div>
       
         
-<div class="my_post_copyright">
-  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
-  
-  <!-- JS库 sweetalert 可修改路径 -->
-  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
-  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
-  <p><span>本文标题:</span><a href="/2017/10/27/Ubuntu搭建DNS服务器/">Ubuntu搭建DNS服务器</a></p>
-  <p><span>文章作者:</span><a href="/" title="访问 olei.me 的个人博客">olei.me</a></p>
-  <p><span>发布时间:</span>2017年10月27日 - 14:10</p>
-  <p><span>最后更新:</span>2017年10月27日 - 14:10</p>
-  <p><span>原始链接:</span><a href="/2017/10/27/Ubuntu搭建DNS服务器/" title="Ubuntu搭建DNS服务器">http://blog.olei.me/2017/10/27/Ubuntu搭建DNS服务器/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://blog.olei.me/2017/10/27/Ubuntu搭建DNS服务器/"  aria-label="复制成功！"></i></span>
-  </p>
-  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
-</div>
-<script> 
-    var clipboard = new Clipboard('.fa-clipboard');
-	clipboard.on('success', $(function(){
-	  $(".fa-clipboard").click(function(){
-		swal({   
-		  title: "",   
-		  text: '复制成功',   
-		  html: false,
-		  timer: 500,   
-		  showConfirmButton: false
-	    });
-	  });
-    }));  
-</script>
-
 
       
       </div>
@@ -529,8 +472,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/25/hexo-next中接入DaoVoice/" rel="next" title="hexo next中接入DaoVoice">
-                <i class="fa fa-chevron-left"></i> hexo next中接入DaoVoice
+              <a href="/2018/01/23/clickhouse设置密码登录以及只读账号/" rel="next" title="clickhouse设置密码登录以及只读账号">
+                <i class="fa fa-chevron-left"></i> clickhouse设置密码登录以及只读账号
               </a>
             
           </div>
@@ -538,10 +481,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/03/ubuntu下使用ldap做服务器用户认证/" rel="prev" title="ubuntu下使用ldap做服务器用户认证">
-                ubuntu下使用ldap做服务器用户认证 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -763,7 +702,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置缓存转发"><span class="nav-number">2.</span> <span class="nav-text">配置缓存转发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置local文件"><span class="nav-number">3.</span> <span class="nav-text">配置local文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义区域配置文件"><span class="nav-number">4.</span> <span class="nav-text">定义区域配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#检查配置、重启"><span class="nav-number">5.</span> <span class="nav-text">检查配置、重启</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置路由器首要DNS"><span class="nav-number">6.</span> <span class="nav-text">配置路由器首要DNS</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装需要的包"><span class="nav-number">1.</span> <span class="nav-text">安装需要的包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用demo"><span class="nav-number">2.</span> <span class="nav-text">使用demo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用一键运行创建大量数据库表"><span class="nav-number">3.</span> <span class="nav-text">使用一键运行创建大量数据库表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问数据库就可以看到新创建的数据库"><span class="nav-number"></span> <span class="nav-text">访问数据库就可以看到新创建的数据库  </span></a></div>
             
 
           </div>

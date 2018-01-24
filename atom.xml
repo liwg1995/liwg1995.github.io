@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.olei.me/"/>
-  <updated>2018-01-23T11:21:04.164Z</updated>
+  <updated>2018-01-24T10:49:43.775Z</updated>
   <id>http://blog.olei.me/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用sqlalchemy为clickhouse创建数据表</title>
+    <link href="http://blog.olei.me/2018/01/24/%E4%BD%BF%E7%94%A8sqlalchemy%E4%B8%BAclickhouse%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E8%A1%A8/"/>
+    <id>http://blog.olei.me/2018/01/24/使用sqlalchemy为clickhouse创建数据表/</id>
+    <published>2018-01-24T10:40:22.000Z</published>
+    <updated>2018-01-24T10:49:43.775Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="安装需要的包"><a href="#安装需要的包" class="headerlink" title="安装需要的包"></a>安装需要的包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pip install clickhouse-sqlalchemy</div></pre></td></tr></table></figure><a id="more"></a><h3 id="使用demo"><a href="#使用demo" class="headerlink" title="使用demo"></a>使用demo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"># -*- coding: utf-8 -*-</div><div class="line"></div><div class="line">from sqlalchemy import create_engine, Column, MetaData, literal</div><div class="line">from clickhouse_sqlalchemy  import Table, make_session, get_declarative_base, types, engines</div><div class="line"></div><div class="line">uri = &quot;clickhouse://default:Qbb4RJa4@localhost/dayday&quot;</div><div class="line"></div><div class="line">engine = create_engine(uri)</div><div class="line">session = make_session(engine)</div><div class="line">metadata = MetaData(bind=engine)</div><div class="line"></div><div class="line">Base = get_declarative_base(metadata=metadata)</div><div class="line"></div><div class="line">day  = Table(&apos;date&apos;,metadata,</div><div class="line">              Column(&apos;day&apos;,types.Date,primary_key=True),</div><div class="line">              Column(&apos;value&apos;,types.Int32,server_default=literal(1)),</div><div class="line">              engines.Memory()</div><div class="line">              )</div><div class="line"></div><div class="line"></div><div class="line">if __name__ == &quot;__main__&quot;:</div><div class="line">        day.create()</div></pre></td></tr></table></figure><blockquote><p>我设置了密码，自己没有设置，<code>@</code>与<code>//</code>前面几个不用写</p></blockquote><h3 id="使用一键运行创建大量数据库表"><a href="#使用一键运行创建大量数据库表" class="headerlink" title="使用一键运行创建大量数据库表"></a>使用一键运行创建大量数据库表</h3><pre><code># -*- coding: utf-8 -*-from sqlalchemy import create_engine, Column, MetaData, literalfrom clickhouse_sqlalchemy import make_session, get_declarative_base, types, enginesfrom datetime import datetimeuri = &quot;clickhouse://default:Qbb4RJa4@localhost/default&quot;engine = create_engine(uri)session = make_session(engine)metadata = MetaData(bind=engine)Base = get_declarative_base(metadata=metadata)class User(Base):    __tablename__ = &quot;user&quot;    id = Column(types.Int8, primary_key=True)    name = Column(types.String)    pwd = Column(types.String)    email = Column(types.String)    phone = Column(types.String)    info = Column(types.String)    face = Column(types.String)    addtime = Column(types.Date)    uuid = Column(types.String)    __table_args__ = (        engines.Memory(),    )    def __repr__(self):        return &quot;&lt;User %r&gt;&quot; % self.nameif __name__ == &quot;__main__&quot;:   Base.metadata.create_all(engine)</code></pre><blockquote><p>多个数据表可以写多个<code>class</code></p><h2 id="访问数据库就可以看到新创建的数据库"><a href="#访问数据库就可以看到新创建的数据库" class="headerlink" title="访问数据库就可以看到新创建的数据库  "></a>访问数据库就可以看到新创建的数据库  </h2><p>遇见的问题是关联表之间的问题，关联表的时候，显示数据表引擎有问题，还不知怎么解决，探索中… … </p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;安装需要的包&quot;&gt;&lt;a href=&quot;#安装需要的包&quot; class=&quot;headerlink&quot; title=&quot;安装需要的包&quot;&gt;&lt;/a&gt;安装需要的包&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ pip install clickhouse-sqlalchemy&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="clickhouse" scheme="http://blog.olei.me/tags/clickhouse/"/>
+    
+  </entry>
   
   <entry>
     <title>clickhouse设置密码登录以及只读账号</title>
@@ -462,29 +482,6 @@
     
     
       <category term="ldap,phpldapadmin" scheme="http://blog.olei.me/tags/ldap-phpldapadmin/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>certbot免费SSL证书申请部署</title>
-    <link href="http://blog.olei.me/2017/10/18/certbot%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6%E7%94%B3%E8%AF%B7%E9%83%A8%E7%BD%B2/"/>
-    <id>http://blog.olei.me/2017/10/18/certbot免费SSL证书申请部署/</id>
-    <published>2017-10-18T03:19:53.000Z</published>
-    <updated>2017-10-24T10:32:45.555Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get update</div><div class="line">$ sudo apt-get install software-properties-common</div><div class="line">$ sudo add-apt-repository ppa:certbot/certbot</div><div class="line">$ sudo apt-get update</div><div class="line">$ sudo apt-get install python-certbot-nginx</div></pre></td></tr></table></figure><h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ certbot  certonly  --cert-name  xxxx  -d  xxxx</div></pre></td></tr></table></figure><blockquote><p>第一个<code>xxx</code>是证书名，第二个<code>xxx</code>是为了给哪个证书申请的域名</p><h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><p>申请的域名一般都是90天的，所以我们需要更新</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ certbot renew</div></pre></td></tr></table></figure><hr><blockquote><p>参考：<a href="https://certbot.eff.org/#ubuntuxenial-nginx" target="_blank" rel="external">certbot for nginx</a><br>以上是基于ubuntu 16.04的linux系统，更多的请参考：<a href="https://certbot.eff.org" target="_blank" rel="external">certbot官网</a></p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ sudo apt-get update&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ sudo apt-get install software-properties-common&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ sudo add-apt-repository ppa:certbot/certbot&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ sudo apt-get update&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ sudo apt-get install python-certbot-nginx&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;部署&quot;&gt;&lt;a href=&quot;#部署&quot; class=&quot;headerlink&quot; title=&quot;部署&quot;&gt;&lt;/a&gt;部署&lt;/h3&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="http://blog.olei.me/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="certbot,ssl" scheme="http://blog.olei.me/tags/certbot-ssl/"/>
     
   </entry>
   
