@@ -80,7 +80,7 @@
 <meta property="og:description" content="准备装有mysql的两台服务器IP分别为：    xxx.xxx.xxx.1 （主） xxx.xxx.xxx.2 （从）">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://resources.olei.me/%E4%B8%BB%E4%BB%8E.png">
-<meta property="og:updated_time" content="2018-02-28T04:17:40.437Z">
+<meta property="og:updated_time" content="2018-02-28T07:10:01.989Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql数据库主从复制">
 <meta name="twitter:description" content="准备装有mysql的两台服务器IP分别为：    xxx.xxx.xxx.1 （主） xxx.xxx.xxx.2 （从）">
@@ -348,7 +348,7 @@
 <li>将这两台IP授权，允许其它IP通过账号密码进行访问（添加账号为<code>test</code>，密码为<code>12345</code>）</li>
 <li>分别登录两台服务器，进入<code>mysql</code>，输入：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql&gt; Grant all privileges on *.* to &apos;test&apos;@&apos;%&apos;&apos; identified by &apos;123456&apos; with grant option; </div><div class="line">mysql&gt; Flush privileges;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql&gt; Grant all privileges on *.* to &apos;test&apos;@&apos;%&apos; identified by &apos;123456&apos; with grant option; </div><div class="line">mysql&gt; Flush privileges;</div></pre></td></tr></table></figure>
 <blockquote>
 <p>注意：  </p>
 <ol>
