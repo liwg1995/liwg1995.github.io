@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.olei.me/"/>
-  <updated>2018-01-27T10:21:02.593Z</updated>
+  <updated>2018-02-28T04:17:40.437Z</updated>
   <id>http://blog.olei.me/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mysql数据库主从复制</title>
+    <link href="http://blog.olei.me/2018/02/28/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/"/>
+    <id>http://blog.olei.me/2018/02/28/mysql数据库主从复制/</id>
+    <published>2018-02-28T04:16:47.000Z</published>
+    <updated>2018-02-28T04:17:40.437Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>准备装有mysql的两台服务器<br><code>IP</code>分别为：  </p><ul><li>xxx.xxx.xxx.1 （主）</li><li>xxx.xxx.xxx.2 （从）</li></ul></blockquote><a id="more"></a><h3 id="授权"><a href="#授权" class="headerlink" title="授权"></a>授权</h3><ul><li>将这两台IP授权，允许其它IP通过账号密码进行访问（添加账号为<code>test</code>，密码为<code>12345</code>）</li><li>分别登录两台服务器，进入<code>mysql</code>，输入：</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql&gt; Grant all privileges on *.* to &apos;test&apos;@&apos;%&apos;&apos; identified by &apos;123456&apos; with grant option; </div><div class="line">mysql&gt; Flush privileges;</div></pre></td></tr></table></figure><blockquote><p>注意：  </p><ol><li>上述代码的意思是创建一个<code>test</code>用户，<code>host=%</code>，允许所有<code>IP</code>通过用户名<code>test</code>进行访问。添加完刷新权限。  </li><li>此时两台机子的mysql应该是可以相互访问的，如果不可以，导致的原因有很多，最常见的是防火墙没关，或者是安全组没有放通<code>3306</code>端口  </li></ol></blockquote><h3 id="主数据库配置"><a href="#主数据库配置" class="headerlink" title="主数据库配置"></a>主数据库配置</h3><ul><li>登录主服务器，进入<code>mysql</code>的配置文件<code>/etc/mysql/mysql.conf.d/mysqld.cnf</code>,在<code>[mysqld]</code>下面添加：</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">server-id=1 </div><div class="line">log-bin=master-bin </div><div class="line">log-bin-index=master-bin.index</div></pre></td></tr></table></figure><ul><li>重启服务(这个是<code>ubuntu</code>的重启方式之一)：</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ /etc/init.d/mysql restart</div></pre></td></tr></table></figure><ul><li>进入<code>mysql</code>，查看主服务器<code>mysql master</code>状态:</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">mysql&gt; show master status;</div><div class="line">+-------------------+----------+--------------+------------------+</div><div class="line">| File              | Position | Binlog_Do_DB | Binlog_Ignore_DB |</div><div class="line">+-------------------+----------+--------------+------------------+</div><div class="line">| master-bin.000001 |      245 |              |                  |</div><div class="line">+-------------------+----------+--------------+------------------+</div></pre></td></tr></table></figure><blockquote><p>日志File为<code>master-bin.000001</code>，Position为<code>245</code>（这个得记下来，设置从服务的要用）  </p></blockquote><h3 id="从数据库配置"><a href="#从数据库配置" class="headerlink" title="从数据库配置"></a>从数据库配置</h3><ul><li>登录从服务器，进入<code>mysql</code>的配置文件<code>/etc/mysql/mysql.conf.d/mysqld.cnf</code>,在<code>[mysqld]</code>下面添加：</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">server-id=10</div><div class="line">log-bin=master-bin</div><div class="line">log-bin-index=master-bin.index</div></pre></td></tr></table></figure><blockquote><p><code>server-id</code>可以是其他，但是不能与主服务器上的一样  </p></blockquote><h3 id="从数据库连接主服务"><a href="#从数据库连接主服务" class="headerlink" title="从数据库连接主服务"></a>从数据库连接主服务</h3><ul><li>在从服务器中，登录数据库，输入：</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">mysql&gt; change master to</div><div class="line">    -&gt; master_host = &apos;xxx.xxx.xxx.1&apos;,</div><div class="line">    -&gt; master_user=&apos;test&apos;,</div><div class="line">    -&gt; master_password=&apos;12345&apos;,</div><div class="line">    -&gt; master_log_file=&apos;master-bin.000001&apos;,</div><div class="line">    -&gt; master_log_pos= 245;</div><div class="line">Query OK, 0 rows affected, 2 warnings (0.13 sec)</div></pre></td></tr></table></figure><h3 id="启动slave"><a href="#启动slave" class="headerlink" title="启动slave"></a>启动<code>slave</code></h3><ul><li>启动：</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql&gt; start slave;</div><div class="line">Query OK, 0 rows affected (0.01 sec)</div></pre></td></tr></table></figure><ul><li>查看状态：</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql&gt; show slave status\G</div></pre></td></tr></table></figure><blockquote><p>显示的内容一定有这个情况才算配置正常：</p></blockquote><pre><code>Slave_IO_Running: YesSlave_SQL_Running: Yes</code></pre><h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><ul><li>在主数据库上创建一个<code>test_zhucong</code>的数据库，创建一个<code>test</code>表  </li></ul><p><img src="https://resources.olei.me/%E4%B8%BB%E4%BB%8E.png" alt=""><br>可以看到，从数据库也相应的有了这个数据库以及表</p><blockquote><p>注意</p><ol><li>做主从复制时，首先确定两台服务器的mysql没任何自定义库(否则只可以配置完后之前的东西没法同步,或者两个库都有完全相同的库应该也是可以同步，图中主数据库有些数据库在从的里面没有，就是因为主从设置之前，创建了)  </li><li><code>server_id</code>必须配置不一样</li></ol></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;准备装有mysql的两台服务器&lt;br&gt;&lt;code&gt;IP&lt;/code&gt;分别为：  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;xxx.xxx.xxx.1 （主）&lt;/li&gt;
+&lt;li&gt;xxx.xxx.xxx.2 （从）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="mysql" scheme="http://blog.olei.me/tags/mysql/"/>
+    
+  </entry>
   
   <entry>
     <title>clickhouse的python库:clickhouse-driver使用</title>
@@ -453,33 +479,6 @@
     
     
       <category term="gitlab" scheme="http://blog.olei.me/tags/gitlab/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>php+nginx+http/https的Basic Authentication认证</title>
-    <link href="http://blog.olei.me/2017/10/19/php-nginx-http-https%E7%9A%84basic%E8%AE%A4%E8%AF%81/"/>
-    <id>http://blog.olei.me/2017/10/19/php-nginx-http-https的basic认证/</id>
-    <published>2017-10-19T11:31:20.000Z</published>
-    <updated>2017-10-24T10:34:03.557Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="写入帐号密码"><a href="#写入帐号密码" class="headerlink" title="写入帐号密码"></a>写入帐号密码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo printf &quot;xxxxx:$(openssl passwd -crypt *****)\n&quot; &gt;&gt; /etc/nginx/pass_file</div></pre></td></tr></table></figure><blockquote><p><code>xxxxx</code>为用户名，<code>*****</code>为该帐号的密码</p><h3 id="nginx配置文件"><a href="#nginx配置文件" class="headerlink" title="nginx配置文件"></a><code>nginx</code>配置文件</h3></blockquote><a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">location / &#123;</div><div class="line">    auth_basic &quot;Restricted&quot;;</div><div class="line">        auth_basic_user_file /etc/nginx/pass_file;</div><div class="line">        root /var/www/satis/web;</div><div class="line">        try_files $uri $uri/ /index.php?$query_string;</div><div class="line">        location ~ \.php$ &#123;</div><div class="line">            fastcgi_pass   127.0.0.1:9000;</div><div class="line">            fastcgi_index  index.php;</div><div class="line">            include        fastcgi_params;</div><div class="line">            fastcgi_param  SCRIPT_FILENAME  $realpath_root/$fastcgi_script_name;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure><blockquote><p>auth_basic_user_file /etc/nginx/pass_file;`</p><ul><li>注意这里的路径，错了会一直<code>404</code></li></ul></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;写入帐号密码&quot;&gt;&lt;a href=&quot;#写入帐号密码&quot; class=&quot;headerlink&quot; title=&quot;写入帐号密码&quot;&gt;&lt;/a&gt;写入帐号密码&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ sudo printf &amp;quot;xxxxx:$(openssl passwd -crypt *****)\n&amp;quot; &amp;gt;&amp;gt; /etc/nginx/pass_file&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;xxxxx&lt;/code&gt;为用户名，&lt;code&gt;*****&lt;/code&gt;为该帐号的密码&lt;/p&gt;
-&lt;h3 id=&quot;nginx配置文件&quot;&gt;&lt;a href=&quot;#nginx配置文件&quot; class=&quot;headerlink&quot; title=&quot;nginx配置文件&quot;&gt;&lt;/a&gt;&lt;code&gt;nginx&lt;/code&gt;配置文件&lt;/h3&gt;&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="http://blog.olei.me/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="nginx" scheme="http://blog.olei.me/tags/nginx/"/>
-    
-      <category term="Basic Authentication" scheme="http://blog.olei.me/tags/Basic-Authentication/"/>
     
   </entry>
   
